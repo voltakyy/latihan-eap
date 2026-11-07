@@ -16,208 +16,626 @@
 
 const LISTENING_DRILLS = [
   {
-    id: 'lis-nathan',
-    title: "Exercise 1: Radio Interview — Nathan's School (Brooklyn Free School)",
-    source: 'Latihan Dosen: Meeting 2 (Set 1)',
-    transcript: `[RADIO INTERVIEW TRANSCRIPT]
-Host: "Welcome back to Education Today. Today we're visiting Brooklyn Free School in New York to speak with Nathan, a 16-year-old high school student. Nathan, tell us about how your school works."
-Nathan: "Hi! Well, Brooklyn Free School is really unique. There are no tests, no homework, and no mandatory grades. In my section of the school, students are aged 12 to 18, and there are about 60 students in total. We choose what we want to study every day."
-Host: "Do you have regular classes with kids your own age?"
-Nathan: "Actually, I rarely sit next to students who are only my age. We mix together. For instance, the boy who helps me with advanced mathematics is only 13 years old, but he's a genius at calculus! Our daily lessons run from 9:00 a.m. to 3:00 p.m. And while some think it's completely free, standard tuition actually costs about $12,000 a year, though they offer financial aid."
-Host: "Do you enjoy coming to school?"
-Nathan: "I absolutely love it. It's an inspiring place to learn."`,
-    questions: [
+    "id": "lis-nathan",
+    "title": "Exercise 1: Radio Interview \u2014 Nathan's School (Brooklyn Free School)",
+    "source": "Latihan Dosen: Meeting 2 (Set 1 - Nathan's School)",
+    "transcript": "[RADIO INTERVIEW TRANSCRIPT \u2014 EDUCATION TODAY]\nHost: \"Welcome back to Education Today. Today we're visiting Brooklyn Free School in New York to speak with Nathan, a 16-year-old high school student. Nathan, tell us about how your school works.\"\nNathan: \"Hi! Well, Brooklyn Free School is really unique. There are no tests, no homework, and no mandatory grades. In my section of the school, students are aged 12 to 18, and there are about 60 students in total. We choose what we want to study every day rather than following standard school subjects.\"\nHost: \"Do you have regular classes with kids your own age?\"\nNathan: \"Actually, I rarely sit next to students who are only my age. We mix together. For instance, the boy who helps me with advanced mathematics is only 13 years old, but he's a genius at calculus! Our daily lessons run from 9:00 a.m. to 3:00 p.m. And while some think it's completely free, standard tuition actually costs about $12,000 a year, though they offer generous financial aid.\"\nHost: \"Do you enjoy coming to school?\"\nNathan: \"I absolutely love it. It's an inspiring and liberating place to learn.\"",
+    "questions": [
       {
-        id: 'ln-1',
-        q: '1. Nathan is ___ years old.',
-        options: ['15', '16', '17'],
-        answer: 1, // 16
-        expl: 'Kunci: B (16). Transkrip: <u>"...to speak with Nathan, a 16-year-old high school student."</u>'
+        "id": "ln-0a",
+        "q": "Part A (Q1). Which sentence about Brooklyn Free School is NOT true?",
+        "options": [
+          "Classes at the school are very small.",
+          "They study the usual school subjects.",
+          "Nathan loves and enjoys coming to school."
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (They study the usual school subjects). Transkrip: <u>'There are no tests, no homework... We choose what we want to study every day rather than following standard school subjects.'</u> Siswa di Brooklyn Free School tidak mempelajari mata pelajaran konvensional/standar."
       },
       {
-        id: 'ln-2',
-        q: "2. In Nathan's part of the school the students are aged ___.",
-        options: ['4-11', '4-18', '12-18'],
-        answer: 2, // 12-18
-        expl: 'Kunci: C (12-18). Transkrip: <u>"In my section of the school, students are aged 12 to 18..."</u>'
+        "id": "ln-0b",
+        "q": "Part A (Q2). What is the mandatory testing and homework policy at the school?",
+        "options": [
+          "Students take weekly standardized exams.",
+          "There are no tests, no homework, and no mandatory grades.",
+          "Homework is assigned only in advanced mathematics."
+        ],
+        "answer": 1,
+        "expl": "Kunci: B. Transkrip: <u>'There are no tests, no homework, and no mandatory grades.'</u>"
       },
       {
-        id: 'ln-3',
-        q: "3. Nathan's part of the school has about ___ students.",
-        options: ['16', '60', '66'],
-        answer: 1, // 60
-        expl: 'Kunci: B (60). Transkrip: <u>"...and there are about 60 students in total."</u>'
+        "id": "ln-0c",
+        "q": "Part A (Q3). What is Nathan's genuine attitude toward Brooklyn Free School?",
+        "options": [
+          "Nathan doesn't enjoy school.",
+          "Nathan finds the daily routine dull.",
+          "Nathan absolutely loves it and finds it inspiring."
+        ],
+        "answer": 2,
+        "expl": "Kunci: C. Transkrip: <u>'I absolutely love it. It\\'s an inspiring place to learn.'</u> Pernyataan bahwa Nathan tidak suka sekolah adalah keliru."
       },
       {
-        id: 'ln-4',
-        q: '4. Nathan ___ sits next to students of his own age.',
-        options: ['sometimes', 'never', 'always'],
-        answer: 0, // sometimes
-        expl: 'Kunci: A (sometimes). Transkrip: Nathan menyatakan ia belajar bercampur usia, sehingga hanya kadang-kadang (sometimes) duduk dengan yang seumuran.'
+        "id": "ln-1",
+        "q": "Part B (Q1). Nathan is ___ years old.",
+        "options": [
+          "15",
+          "16",
+          "17"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (16). Transkrip: <u>'...to speak with Nathan, a 16-year-old high school student.'</u>"
       },
       {
-        id: 'ln-5',
-        q: '5. The boy who helps Nathan with maths is ___ years old.',
-        options: ['11', '13', '18'],
-        answer: 1, // 13
-        expl: 'Kunci: B (13). Transkrip: <u>"the boy who helps me with advanced mathematics is only 13 years old..."</u>'
+        "id": "ln-2",
+        "q": "Part B (Q2). In Nathan's part of the school the students are aged ___.",
+        "options": [
+          "4-11",
+          "4-18",
+          "12-18"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (12-18). Transkrip: <u>'In my section of the school, students are aged 12 to 18...'</u>"
       },
       {
-        id: 'ln-6',
-        q: '6. Lessons are from ___.',
-        options: ['8 a.m. to 3 p.m.', '9 a.m. to 3 p.m.', '9 a.m. to 4 p.m.'],
-        answer: 1, // 9 a.m. to 3 p.m.
-        expl: 'Kunci: B (9 a.m. to 3 p.m.). Transkrip: <u>"Our daily lessons run from 9:00 a.m. to 3:00 p.m."</u>'
+        "id": "ln-3",
+        "q": "Part B (Q3). Nathan's part of the school has about ___ students.",
+        "options": [
+          "16",
+          "60",
+          "66"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (60). Transkrip: <u>'...and there are about 60 students in total.'</u>"
       },
       {
-        id: 'ln-7',
-        q: '7. It costs ___ a year to study at the school.',
-        options: ['$2,000', '$12,000', '$20,000'],
-        answer: 1, // $12,000
-        expl: 'Kunci: B ($12,000). Transkrip: <u>"...standard tuition actually costs about $12,000 a year..."</u>'
+        "id": "ln-4",
+        "q": "Part B (Q4). Nathan ___ sits next to students of his own age.",
+        "options": [
+          "sometimes",
+          "never",
+          "always"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (sometimes). Transkrip: <u>'Actually, I rarely sit next to students who are only my age. We mix together.'</u> (Rarely/kadang-kadang, tidak selalu)."
+      },
+      {
+        "id": "ln-5",
+        "q": "Part B (Q5). The boy who helps Nathan with maths is ___.",
+        "options": [
+          "11",
+          "13",
+          "18"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (13). Transkrip: <u>'...the boy who helps me with advanced mathematics is only 13 years old...'</u>"
+      },
+      {
+        "id": "ln-6",
+        "q": "Part B (Q6). Lessons are from ___.",
+        "options": [
+          "8 a.m. to 3 p.m.",
+          "9 a.m. to 3 p.m.",
+          "9 a.m. to 4 p.m."
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (9 a.m. to 3 p.m.). Transkrip: <u>'Our daily lessons run from 9:00 a.m. to 3:00 p.m.'</u>"
+      },
+      {
+        "id": "ln-7",
+        "q": "Part B (Q7). It costs ___ a year to study at the school.",
+        "options": [
+          "$2,000",
+          "$12,000",
+          "$20,000"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B ($12,000). Transkrip: <u>'...standard tuition actually costs about $12,000 a year...'</u>"
       }
     ]
   },
   {
-    id: 'lis-miley',
-    title: 'Exercise 2: Biography Profile — Miley Cyrus Short Biography',
-    source: 'Latihan Dosen: Meeting 2 (Set 2)',
-    transcript: `[BIOGRAPHY AUDIO TRANSCRIPT]
-Narrator: "Miley Cyrus was born to be a star. She was born on November 23rd, 1992, in Franklin, Tennessee. Cyrus became famous worldwide when she starred in the television show "Hannah Montana" on Disney Channel. Two years later, she expanded her fame into mainstream pop music. Her 3D concert movie obtained more than 55 million dollars at the box office on opening weekend. Remarkably, by age 16, Miley already had achieved two number-one albums on the Billboard charts. Her energetic single "Party in the USA" became her best-selling single across the United States. Many music critics and fans respect her because she fearlessly takes artistic risks. In 2011, she was officially ranked in Hollywood as the second richest person under 25. Later in 2012, Miley made a notable guest appearance in the sitcom "Two and a Half Men", participating a few times throughout the season."`,
-    questions: [
+    "id": "lis-miley",
+    "title": "Exercise 2: Celebrity Profile \u2014 Miley Cyrus Short Biography",
+    "source": "Latihan Dosen: Meeting 2 (Set 2 - Miley Cyrus)",
+    "transcript": "[BIOGRAPHY AUDIO TRANSCRIPT \u2014 MILEY CYRUS]\nNarrator: \"Destined for the spotlight, Miley Cyrus was born to be a star. She was born on November 23rd, 1992 in Franklin, Tennessee. Miley first became famous in a TV show when Disney cast her as the lead character in the hit television series Hannah Montana. Two years later, Cyrus became even more famous with her music, releasing chart-topping records under her own name. Her 3D concert movie obtained more than 55 million dollars at the box office worldwide. Remarkably, by the tender age of 16, Miley Cyrus had already earned two #1 albums on the Billboard charts. Among her massive hits, 'Party in the U.S.A.' became her best-selling single in the USA. Critics and fans admire her daring artistic choices; the presenter notes he particularly likes Miley Cyrus because she fearlessly takes risks in her creative career. In 2011, Cyrus was officially recognized in Hollywood as the second richest person among teenage celebrities. Later, in 2012, Miley demonstrated her versatile comedic talent when she participated as a special guest star in the popular sitcom 'Two and a Half Men'.\"",
+    "questions": [
       {
-        id: 'mc-1',
-        q: '1. Miley Cyrus was born to be:',
-        options: ['a fan', 'a star', 'a sensation'],
-        answer: 1, // a star
-        expl: 'Kunci: B (a star). Transkrip: <u>"Miley Cyrus was born to be a star."</u>'
+        "id": "lm-1",
+        "q": "1. Miley Cyrus was born to be ___",
+        "options": [
+          "a fan",
+          "a star",
+          "a sensation"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (a star). Transkrip: <u>'...Miley Cyrus was born to be a star.'</u>"
       },
       {
-        id: 'mc-2',
-        q: '2. When was she born?',
-        options: ['On November 21st, 1992', 'On November 23rd, 1992', 'On November 23rd, 1994'],
-        answer: 1, // Nov 23, 1992
-        expl: 'Kunci: B (On November 23rd, 1992). Transkrip: <u>"She was born on November 23rd, 1992..."</u>'
+        "id": "lm-2",
+        "q": "2. When was she born?",
+        "options": [
+          "On November 21st, 1992",
+          "On November 23rd, 1992",
+          "On November 23rd, 1994"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B. Transkrip: <u>'She was born on November 23rd, 1992...'</u>"
       },
       {
-        id: 'mc-3',
-        q: '3. Miley Cyrus became famous:',
-        options: ['in a TV show', 'in a concert', 'in a commercial'],
-        answer: 0, // TV show
-        expl: 'Kunci: A (in a TV show). Transkrip: <u>"...when she starred in the television show \\\'Hannah Montana\\\'..."</u>'
+        "id": "lm-3",
+        "q": "3. Miley Cyrus became famous ___",
+        "options": [
+          "in a TV show",
+          "in a concert",
+          "in a commercial"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (in a TV show). Transkrip: <u>'Miley first became famous in a TV show when Disney cast her as the lead character in Hannah Montana.'</u>"
       },
       {
-        id: 'mc-4',
-        q: '4. Cyrus became more famous with her music:',
-        options: ['2 years later', '3 years later', '5 years later'],
-        answer: 0, // 2 years later
-        expl: 'Kunci: A (2 years later). Transkrip: <u>"Two years later, she expanded her fame into mainstream pop music."</u>'
+        "id": "lm-4",
+        "q": "4. Cyrus became more famous with her music ___",
+        "options": [
+          "2 years later",
+          "3 years later",
+          "5 years later"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (2 years later). Transkrip: <u>'Two years later, Cyrus became even more famous with her music...'</u>"
       },
       {
-        id: 'mc-5',
-        q: '5. The 3D movie obtained more than:',
-        options: ['55 million dollars', '155 million dollars', '115 million dollars'],
-        answer: 0, // 55 million
-        expl: 'Kunci: A (55 million dollars). Transkrip: <u>"Her 3D concert movie obtained more than 55 million dollars..."</u>'
+        "id": "lm-5",
+        "q": "5. The 3D movie obtained more than ___",
+        "options": [
+          "55 million dollars",
+          "155 million dollars",
+          "115 million dollars"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (55 million dollars). Transkrip: <u>'Her 3D concert movie obtained more than 55 million dollars at the box office...'</u>"
       },
       {
-        id: 'mc-6',
-        q: '6. At 16 Miley Cyrus had:',
-        options: ['4 #1 albums', '2 #1 albums', '3 #1 albums'],
-        answer: 1, // 2 #1 albums
-        expl: 'Kunci: B (2 #1 albums). Transkrip: <u>"by age 16, Miley already had achieved two number-one albums..."</u>'
+        "id": "lm-6",
+        "q": "6. At 16, Miley Cyrus had ___",
+        "options": [
+          "4 #1 albums",
+          "2 #1 albums",
+          "3 #1 albums"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (2 #1 albums). Transkrip: <u>'...by the tender age of 16, Miley Cyrus had already earned two #1 albums on the Billboard charts.'</u>"
       },
       {
-        id: 'mc-7',
-        q: '7. What album/single became best-selling single in the USA?',
-        options: ['The climb', 'Party in the USA', 'Hannah Montana'],
-        answer: 1, // Party in the USA
-        expl: 'Kunci: B (Party in the USA). Transkrip: <u>"Her energetic single \\\'Party in the USA\\\' became her best-selling single..."</u>'
+        "id": "lm-7",
+        "q": "7. What became best-selling single in the USA?",
+        "options": [
+          "The Climb",
+          "Party in the USA",
+          "Hannah Montana"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (Party in the USA). Transkrip: <u>''Party in the U.S.A.' became her best-selling single in the USA.'</u>"
       },
       {
-        id: 'mc-8',
-        q: '8. The speaker likes Miley Cyrus because she:',
-        options: ['takes risks', 'sings very well', 'is a good actress'],
-        answer: 0, // takes risks
-        expl: 'Kunci: A (takes risks). Transkrip: <u>"respect her because she fearlessly takes artistic risks."</u>'
+        "id": "lm-8",
+        "q": "8. The man likes Miley Cyrus because she ___",
+        "options": [
+          "takes risks",
+          "sings very well",
+          "is a good actress"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (takes risks). Transkrip: <u>'...the presenter notes he particularly likes Miley Cyrus because she fearlessly takes risks...'</u>"
       },
       {
-        id: 'mc-9',
-        q: '9. In 2011, Cyrus was named ___ in Hollywood.',
-        options: ['the first young actress', 'the best singer', 'the second richest person'],
-        answer: 2, // second richest
-        expl: 'Kunci: C (the second richest person). Transkrip: <u>"...ranked in Hollywood as the second richest person under 25."</u>'
+        "id": "lm-9",
+        "q": "9. In 2011, Cyrus was named ___ in Hollywood.",
+        "options": [
+          "the first young actress",
+          "the best singer",
+          "the second richest person"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (the second richest person). Transkrip: <u>'In 2011, Cyrus was officially recognized in Hollywood as the second richest person among teenage celebrities.'</u>"
       },
       {
-        id: 'mc-10',
-        q: '10. In 2012, Miley participated ___ in the sitcom "Two and a Half Men":',
-        options: ['many times', 'sometimes', 'few times'],
-        answer: 2, // few times
-        expl: 'Kunci: C (few times). Transkrip: <u>"...participating a few times throughout the season."</u>'
+        "id": "lm-10",
+        "q": "10. In 2012, Miley participated ___ in the sitcom 'Two and a Half Men'.",
+        "options": [
+          "many times",
+          "sometimes",
+          "few times"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (sometimes). Transkrip: <u>'...she participated as a special guest star in the sitcom \\'Two and a Half Men\\'.'</u> (Tampil sebagai bintang tamu/kadang-kadang)."
       }
     ]
   },
   {
-    id: 'lis-council',
-    title: 'Exercise 3: IELTS Form Completion — Joining Youth Council (Roger Brown)',
-    source: 'Latihan Dosen: Meeting 2 (Set 3)',
-    transcript: `[IELTS SECTION 1 CONVERSATION]
-Officer: "Good morning, Youth Council office. How can I help you?"
-Roger: "Hello, my name is Roger Brown, and I'd like to ask about joining the Youth Council."
-Officer: "Great! Let me take down a few details. You're 18, correct? And where are you currently living?"
-Roger: "During weekdays, I'm staying in a hostel near the college. My permanent home postal address is 17 Buckworth Street, Stamford, Lincs."
-Officer: "And what is your postcode?"
-Roger: "It's PE9 7JR."
-Officer: "Thanks. Are you working at the moment?"
-Roger: "I'm a full-time university student, but I work a part-time job as a waiter on weekends. My major subject of study is politics, with history as my minor subject."
-Officer: "What about personal hobbies and interests?"
-Roger: "I do a lot of cycling, and I'm very interested in the cinema."
-Officer: "Splendid. Which community focus area would you prefer on the Council?"
-Roger: "I really want to work with young people who are disabled. I want to help improve accessibility."
-Officer: "That's wonderful. Could you come in to speak with the Elections Officer next Monday at 4:30 pm? And please leave your mobile number."
-Roger: "Yes, 4:30 pm is perfect. My mobile number is 07788 136711."`,
-    questions: [
+    "id": "lis-council",
+    "title": "Exercise 3: Official Enquiry \u2014 Roger Brown Youth Council Form",
+    "source": "Dokumen Dosen: Meeting 2 (Set 3 - Youth Council | Cambridge IELTS 11)",
+    "transcript": "[OFFICIAL CONSULTATION TRANSCRIPT \u2014 YOUTH COUNCIL ENQUIRY]\nOfficer: \"Good morning. Youth Council Office. How can I help you?\"\nRoger: \"Hello. My name is Roger Brown, and I'd like to enquire about joining the District Youth Council.\"\nOfficer: \"Certainly, Roger. Let me take down your particulars. You are 18 years old, correct?\"\nRoger: \"Yes, I turned 18 last month. During the week, I am currently staying in a hostel near the city college, though my family home is in Lincolnshire.\"\nOfficer: \"Right, hostel during weekdays. And what is your postal address?\"\nRoger: \"It is 17 Buckworth Street, Stamford, Lincolnshire. That is spelled B-U-C-K-W-O-R-T-H.\"\nOfficer: \"Thank you. And the postcode?\"\nRoger: \"PE9 7QT.\"\nOfficer: \"Got it. What is your current occupation?\"\nRoger: \"Well, I am a full-time university student, but I also work part-time as a waiter at a local bistro on weekends.\"\nOfficer: \"Excellent. And what degree are you taking?\"\nRoger: \"I am studying politics as my major subject, and history as my minor.\"\nOfficer: \"Splendid background for council work. Do you have any personal hobbies or interests?\"\nRoger: \"Yes, I do a lot of cycling around the countryside, and in the evenings I am very interested in the cinema.\"\nOfficer: \"Now, regarding council committees, is there a particular focus you'd prefer?\"\nRoger: \"I am very keen on working with young people who are disabled, helping them access sports facilities.\"\nOfficer: \"Wonderful. Our Elections Officer will need to interview you. Could you come next Monday at 4:30 pm?\"\nRoger: \"Yes, next Monday at 4:30 pm suits me perfectly.\"\nOfficer: \"And lastly, may I have your mobile number?\"\nRoger: \"Certainly, it is 07788 136711.\"\nOfficer: \"Brilliant. See you Monday, Roger!\"",
+    "questions": [
       {
-        id: 'yc-1',
-        q: '1. Currently staying in a [_____] during the week',
-        options: ['apartment', 'hostel', 'dormitory'],
-        answer: 1,
-        expl: 'Kunci: B (hostel). Transkrip: <u>"I\'m staying in a hostel near the college."</u>'
+        "id": "lc-1",
+        "q": "1. During the week, Roger Brown is currently staying in a ___.",
+        "options": [
+          "hostel",
+          "dormitory",
+          "homestay",
+          "flat"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (hostel). Transkrip: <u>'During the week, I am currently staying in a hostel near the city college...'</u>"
       },
       {
-        id: 'yc-2',
-        q: '2. Postal street address: 17, [_____] Street',
-        options: ['Buckworth', 'Blackwell', 'Barker'],
-        answer: 0,
-        expl: 'Kunci: A (Buckworth). Transkrip: <u>"17 Buckworth Street, Stamford"</u>'
+        "id": "lc-2",
+        "q": "2. Postal address: 17, ___ Street, Stamford, Lincs.",
+        "options": [
+          "Buckworth",
+          "Blackwood",
+          "Barkworth",
+          "Beckwith"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (Buckworth). Transkrip: <u>'It is 17 Buckworth Street, Stamford, Lincolnshire. B-U-C-K-W-O-R-T-H.'</u>"
       },
       {
-        id: 'yc-3',
-        q: '3. Part-time job as a [_____]',
-        options: ['librarian', 'waiter', 'cashier'],
-        answer: 1,
-        expl: 'Kunci: B (waiter). Transkrip: <u>"work a part-time job as a waiter on weekends."</u>'
+        "id": "lc-3",
+        "q": "3. What is the correct postcode provided by Roger?",
+        "options": [
+          "PE9 7QT",
+          "PE7 9QT",
+          "PE9 8QT",
+          "PE8 7QT"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (PE9 7QT). Transkrip: <u>'PE9 7QT.'</u>"
       },
       {
-        id: 'yc-4',
-        q: '4. Major subject of study: [_____]',
-        options: ['history', 'politics', 'literature'],
-        answer: 1,
-        expl: 'Kunci: B (politics). Transkrip: <u>"My major subject of study is politics..."</u>'
+        "id": "lc-4",
+        "q": "4. Occupation: student and part-time job as a ___.",
+        "options": [
+          "waiter",
+          "cashier",
+          "librarian",
+          "courier"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (waiter). Transkrip: <u>'...I also work part-time as a waiter at a local bistro on weekends.'</u>"
       },
       {
-        id: 'yc-5',
-        q: '5. On Youth Council, wants to work with young people who are [_____]',
-        options: ['unemployed', 'homeless', 'disabled'],
-        answer: 2,
-        expl: 'Kunci: C (disabled). Transkrip: <u>"work with young people who are disabled."</u>'
+        "id": "lc-5",
+        "q": "5. Studying ___ (major subject) and history (minor subject).",
+        "options": [
+          "politics",
+          "history",
+          "economics",
+          "sociology"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (politics). Transkrip: <u>'I am studying politics as my major subject, and history as my minor.'</u>"
+      },
+      {
+        "id": "lc-6",
+        "q": "6. Hobbies: does a lot of ___.",
+        "options": [
+          "cycling",
+          "swimming",
+          "running",
+          "hiking"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (cycling). Transkrip: <u>'Yes, I do a lot of cycling around the countryside...'</u>"
+      },
+      {
+        "id": "lc-7",
+        "q": "7. In his spare time, Roger is also interested in the ___.",
+        "options": [
+          "cinema",
+          "theatre",
+          "photography",
+          "painting"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (cinema). Transkrip: <u>'...and in the evenings I am very interested in the cinema.'</u>"
+      },
+      {
+        "id": "lc-8",
+        "q": "8. On Youth Council, wants to work with young people who are ___.",
+        "options": [
+          "disabled",
+          "unemployed",
+          "homeless",
+          "gifted"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (disabled). Transkrip: <u>'I am very keen on working with young people who are disabled, helping them access sports facilities.'</u>"
+      },
+      {
+        "id": "lc-9",
+        "q": "9. Will come to talk to the Elections Officer next Monday at ___ pm.",
+        "options": [
+          "4.30",
+          "5.00",
+          "5.30",
+          "6.00"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (4.30 pm). Transkrip: <u>'Could you come next Monday at 4:30 pm? Yes, next Monday at 4:30 pm suits me perfectly.'</u>"
+      },
+      {
+        "id": "lc-10",
+        "q": "10. What is Roger Brown's contact mobile number?",
+        "options": [
+          "07788 136711",
+          "07788 136171",
+          "07788 163711",
+          "07887 136711"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (07788 136711). Transkrip: <u>'Certainly, it is 07788 136711.'</u>"
+      }
+    ]
+  },
+  {
+    "id": "lis-festival",
+    "title": "Exercise 4: Community Festival \u2014 Event, Cost, Venue & Plays",
+    "source": "Dokumen Dosen: Meeting 2 (Set 4 - Festival | Cambridge IELTS 11 Test 4)",
+    "transcript": "[FESTIVAL INFORMATION TRANSCRIPT \u2014 STRETTON COMMUNITY FESTIVAL]\nEnquirer: \"Good morning, I'm calling to ask about events at the Stretton Community Festival next week.\"\nCoordinator: \"Of course! We have a marvelous program lined up. On Friday night, our opening event is the Jazz Band concert. Tickets are available for \u00a315. The venue is the Secondary school auditorium, and we're fortunate to have Carolyn Hart appearing as guest soloist; she plays the flute delightfully.\"\nEnquirer: \"Lovely! And what about Saturday daytime?\"\nCoordinator: \"Saturday features the famous Duck races along the river. It costs just \u00a31 per duck to participate. The race will start behind the Infirmary. The first prize is a family pass of tickets for the fireworks display held at the end of the festival. You can purchase ducks in advance at the Town Hall reception desk.\"\nEnquirer: \"Great fun! And is there a Flower Show this year?\"\nCoordinator: \"Yes, admission to the Flower Show is completely free! It will take place in Bythwaite Hall on Saturday afternoon. The contest prizes will be presented at 5:00 p.m. by a well-known actor who resides locally.\"\nEnquirer: \"My children love theatre. Are there any drama plays scheduled?\"\nCoordinator: \"Indeed! We have three distinct plays running at the outdoor theatre. The first play, 'The Mystery of Muldoon', deals with complex psychological themes, so it is intended mainly for adults. The second production, 'Fire and Flood', is a dramatic historical recreation suitable for people of all ages. Finally, 'Silly Sailor' is an upbeat slapstick comedy featuring puppetry, designed mainly for children.\"\nEnquirer: \"That sounds wonderful! Thank you so much.\"",
+    "questions": [
+      {
+        "id": "lf-1",
+        "q": "1. Jazz band venue: The ___ school.",
+        "options": [
+          "secondary",
+          "primary",
+          "grammar",
+          "music"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (secondary). Transkrip: <u>'The venue is the Secondary school auditorium...'</u>"
+      },
+      {
+        "id": "lf-2",
+        "q": "2. Carolyn Hart will appear with the jazz band and plays the ___.",
+        "options": [
+          "flute",
+          "trumpet",
+          "piano",
+          "saxophone"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (flute). Transkrip: <u>'...she plays the flute delightfully.'</u>"
+      },
+      {
+        "id": "lf-3",
+        "q": "3. Duck races start behind the ___.",
+        "options": [
+          "infirmary",
+          "library",
+          "church",
+          "railway station"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (infirmary). Transkrip: <u>'The race will start behind the Infirmary.'</u>"
+      },
+      {
+        "id": "lf-4",
+        "q": "4. The prize for winning the duck races is tickets for ___.",
+        "options": [
+          "fireworks",
+          "the banquet",
+          "a boat cruise",
+          "the carnival rides"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (fireworks). Transkrip: <u>'The first prize is a family pass of tickets for the fireworks display held at the end of the festival.'</u>"
+      },
+      {
+        "id": "lf-5",
+        "q": "5. Ducks can be bought in advance at the ___.",
+        "options": [
+          "town hall",
+          "post office",
+          "supermarket",
+          "market square"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (town hall). Transkrip: <u>'You can purchase ducks in advance at the Town Hall reception desk.'</u>"
+      },
+      {
+        "id": "lf-6",
+        "q": "6. The Flower Show will be held in ___ Hall.",
+        "options": [
+          "Bythwaite",
+          "Braithwaite",
+          "Birchwood",
+          "Broadgate"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (Bythwaite). Transkrip: <u>'It will take place in Bythwaite Hall on Saturday afternoon.'</u>"
+      },
+      {
+        "id": "lf-7",
+        "q": "7. Prizes presented at 5:00 p.m. by a well-known ___.",
+        "options": [
+          "actor",
+          "singer",
+          "novelist",
+          "politician"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (actor). Transkrip: <u>'The contest prizes will be presented at 5:00 p.m. by a well-known actor who resides locally.'</u>"
+      },
+      {
+        "id": "lf-8",
+        "q": "8. Who is the play 'The Mystery of Muldoon' suitable for?",
+        "options": [
+          "mainly for adults",
+          "mainly for children",
+          "suitable for people of all ages"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (mainly for adults). Transkrip: <u>''The Mystery of Muldoon' deals with complex psychological themes, so it is intended mainly for adults.'</u>"
+      },
+      {
+        "id": "lf-9",
+        "q": "9. Who is the play 'Fire and Flood' suitable for?",
+        "options": [
+          "suitable for people of all ages",
+          "mainly for adults",
+          "mainly for children"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (suitable for people of all ages). Transkrip: <u>''Fire and Flood' is a dramatic historical recreation suitable for people of all ages.'</u>"
+      },
+      {
+        "id": "lf-10",
+        "q": "10. Who is the play 'Silly Sailor' suitable for?",
+        "options": [
+          "mainly for children",
+          "mainly for adults",
+          "suitable for people of all ages"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (mainly for children). Transkrip: <u>''Silly Sailor' is an upbeat slapstick comedy featuring puppetry, designed mainly for children.'</u>"
+      }
+    ]
+  },
+  {
+    "id": "lis-conference",
+    "title": "Exercise 5: Informatics Seminar \u2014 Future Directions in Computing Conference",
+    "source": "Dokumen Dosen: Meeting 2 (Set 5 - Conference | Cambridge IELTS 6 Test 4)",
+    "transcript": "[CONFERENCE REGISTRATION TRANSCRIPT \u2014 FUTURE DIRECTIONS IN COMPUTING]\nSecretary: \"Good morning. Computing Conference Enquiries. How can I direct your call?\"\nParticipant: \"Hello. I'm calling about the upcoming 'Future Directions in Computing' conference. Could you give me the key attendance details?\"\nSecretary: \"Certainly! The full three-day registration cost is \u00a3360 per attendee. You can make payment in advance by 10th October, or choose to pay on arrival at the registration desk.\"\nParticipant: \"And what accommodation options do you offer for delegates?\"\nSecretary: \"We offer two types. If you stay on-site at the Conference Centre, rooms cost \u00a365 per night, which is right next to the conference halls. Alternatively, there is a Guest House located nearby costing \u00a345 per night. It is approximately a 10 minutes walk from the Conference Centre.\"\nParticipant: \"Ten minutes walk sounds very convenient. What documents will you be sending me?\"\nSecretary: \"Once you reserve, we will send you the complete conference programme and an official application form.\"\nParticipant: \"Excellent. Where exactly is the venue situated in town?\"\nSecretary: \"The Conference Centre is located on South Park Road, right next to the City Library.\"\nParticipant: \"How should I travel there from the central railway station?\"\nSecretary: \"A taxi costs approximately \u00a35 from the station, or you can take bus number 21A, which stops right outside our front gates.\"\nParticipant: \"Superb. Thank you very much for your assistance!\"",
+    "questions": [
+      {
+        "id": "lk-1",
+        "q": "1. What is the full three-day attendance cost for the computing conference?",
+        "options": [
+          "\u00a3360",
+          "\u00a3320",
+          "\u00a3280",
+          "\u00a3400"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (\u00a3360). Transkrip: <u>'The full three-day registration cost is \u00a3360 per attendee.'</u>"
+      },
+      {
+        "id": "lk-2",
+        "q": "2. Advance payment must be completed by ___ or paid on arrival.",
+        "options": [
+          "10th October",
+          "15th October",
+          "20th October",
+          "25th October"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (10th October). Transkrip: <u>'You can make payment in advance by 10th October, or choose to pay on arrival...'</u>"
+      },
+      {
+        "id": "lk-3",
+        "q": "3. On-site accommodation at the Conference Centre costs \u00a3 ___ per night.",
+        "options": [
+          "65",
+          "55",
+          "75",
+          "85"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (\u00a365). Transkrip: <u>'...at the Conference Centre, rooms cost \u00a365 per night...'</u>"
+      },
+      {
+        "id": "lk-4",
+        "q": "4. Guest House accommodation costs \u00a3 ___ per night.",
+        "options": [
+          "45",
+          "40",
+          "50",
+          "35"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (\u00a345). Transkrip: <u>'...there is a Guest House located nearby costing \u00a345 per night.'</u>"
+      },
+      {
+        "id": "lk-5",
+        "q": "5. The Guest House is approximately a ___ walk from the Conference Centre.",
+        "options": [
+          "10 minutes",
+          "15 minutes",
+          "20 minutes",
+          "25 minutes"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (10 minutes). Transkrip: <u>'It is approximately a 10 minutes walk from the Conference Centre.'</u>"
+      },
+      {
+        "id": "lk-6",
+        "q": "6. What documents will be sent to delegates along with the application form?",
+        "options": [
+          "conference programme",
+          "campus map",
+          "hotel brochure",
+          "city guide"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (conference programme). Transkrip: <u>'...we will send you the complete conference programme and an official application form.'</u>"
+      },
+      {
+        "id": "lk-7",
+        "q": "7. The Conference Centre is situated on ___ Park Road.",
+        "options": [
+          "South",
+          "North",
+          "East",
+          "West"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (South). Transkrip: <u>'The Conference Centre is located on South Park Road...'</u>"
+      },
+      {
+        "id": "lk-8",
+        "q": "8. What municipal landmark is the Conference Centre located next to?",
+        "options": [
+          "the library",
+          "the museum",
+          "the train station",
+          "the town hall"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (the library). Transkrip: <u>'...right next to the City Library.'</u>"
+      },
+      {
+        "id": "lk-9",
+        "q": "9. A taxi from the railway station to the venue costs \u00a3 ___.",
+        "options": [
+          "5",
+          "7",
+          "10",
+          "12"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (\u00a35). Transkrip: <u>'A taxi costs approximately \u00a35 from the station...'</u>"
+      },
+      {
+        "id": "lk-10",
+        "q": "10. Delegates can alternatively take bus number ___ from the station.",
+        "options": [
+          "21A",
+          "12B",
+          "24C",
+          "18A"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (21A). Transkrip: <u>'...or you can take bus number 21A, which stops right outside our front gates.'</u>"
       }
     ]
   }
 ];
 
 // ==========================================
-// 2. GRAMMAR & STRUCTURE DRILLS (MEETING 3 & 4)
+// // 2. GRAMMAR & STRUCTURE DRILLS (MEETING 3 & 4)
 // ==========================================
 
 const GRAMMAR_DRILLS = [
