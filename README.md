@@ -44,13 +44,13 @@ Aplikasi ini membagi seluruh materi kuliah ke dalam halaman dan modul mandiri ya
 
 ## 🌟 Modul & Halaman Interaktif
 
-### 1. 🎧 Listening Arena (Pertemuan 1 & 2)
-Memuat ringkasan strategi mendengarkan akademik dan 5 paket latihan audio otentik dosen:
-- **Set 1:** *Nathan's School (Brooklyn Free School)* — 7 butir soal pilihan ganda tentang kurikulum tanpa ujian, aturan kehadiran, dan biaya sekolah.
-- **Set 2:** *Miley Cyrus Biography* — 10 butir soal riwayat karier, peran Hannah Montana, pendapatan awal, dan prestasi Billboard.
-- **Set 3:** *Roger Brown Youth Council* — 5 butir soal formulir identitas, alamat tempat tinggal (Buckworth Street), pekerjaan sampingan, dan komite disabilitas.
-- **Set 4:** *Community Festival Events* — Latihan mencatat waktu kegiatan, pameran seni, dan lokasi tenda.
-- **Set 5:** *Computing & Informatics Conference* — Latihan mencatat registrasi *early-bird*, sesi *keynote*, dan lokakarya keamanan siber.
+### 1. 🎧 Listening Arena (Pertemuan 1 & 2 — Total 50 Butir Soal Lengkap)
+Memuat ringkasan strategi mendengarkan akademik dan seluruh 5 paket latihan audio otentik dokumen dosen (*Listening exercise.docx*) lengkap dengan Web Speech audio player, pengatur kecepatan, dan mode uji telinga:
+- **Set 1:** *Nathan's School (Brooklyn Free School)* — 10 butir soal (Part A: 3 soal pernyataan keliru + Part B: 7 soal pilihan ganda kurikulum, rentang usia, jumlah siswa, dan biaya SPP).
+- **Set 2:** *Miley Cyrus Biography* — 10 butir soal riwayat karier, peran Hannah Montana, pendapatan film 3D, dan rekor Billboard.
+- **Set 3:** *Roger Brown Youth Council Form* — 10 butir soal formulir identitas, akomodasi mingguan (*hostel*), alamat (Buckworth Street, PE9 7QT), pekerjaan sampingan, hobi sepeda/sinema, komite disabilitas, dan kontak ponsel.
+- **Set 4:** *Stretton Community Festival Events* — 10 butir soal tabel acara festival (Jazz band, Carolyn Hart seruling, lomba bebek, tiket kembang api, Bythwaite Hall, aktor lokal) dan klasifikasi penonton 3 pementasan drama.
+- **Set 5:** *Future Directions in Computing Conference* — 10 butir soal pendaftaran konferensi ilmu komputer, biaya 3 hari (£360), batas waktu pembayaran 10 Oktober, akomodasi Conference Centre & Guest House, rute South Park Road, taksi (£5), dan bus nomor 21A.
 
 ### 2. ⚡ Structure & Grammar (Pertemuan 3 & 4)
 Bedah tuntas komponen tata bahasa akademik:
