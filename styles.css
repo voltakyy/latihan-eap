@@ -1437,6 +1437,34 @@ textarea.outline-input {
   color: var(--ink);
 }
 
+.audio-spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(36, 34, 31, 0.25);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: audio-spin 0.7s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes audio-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.audio-btn.loading {
+  background: var(--mustard-soft) !important;
+  color: var(--ink) !important;
+  cursor: wait;
+}
+
+.audio-status-pill.loading {
+  background: var(--mustard-soft);
+  color: #7a4f01;
+  border-color: var(--ink);
+}
+
 .audio-btn-stop {
   background: var(--tomato);
   color: #fff;
