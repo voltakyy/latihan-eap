@@ -15,15 +15,34 @@
 // ==========================================
 
 const LISTENING_DRILLS = [
-  {
+    {
     "id": "lis-nathan",
-    "title": "Exercise 1: Radio Interview  -  Nathan's School (Brooklyn Free School)",
+    "title": "Exercise 1: Radio Interview - Nathan's School (Brooklyn Free School)",
     "source": "Latihan Dosen: Meeting 2 (Set 1 - Nathan's School)",
-    "transcript": "[RADIO INTERVIEW TRANSCRIPT : BROOKLYN FREE SCHOOL]\nHost: \"I am with Nathan King. He's a student at the Brooklyn Free School. Hi Nathan, and welcome to the program.\"\nNathan: \"Hi.\"\nHost: \"So Nathan, how old are you, and which grade are you in?\"\nNathan: \"I'm 15. In a normal school that's 10th grade, but at my school we don't have grades.\"\nHost: \"Can you tell us a bit about the school? How big is it?\"\nNathan: \"Well, the school has got two parts: one for students aged 4 to 11, and the other for students between 12 and 18. My part of the school has about 60 students.\"\nHost: \"And does each class have a lot of students?\"\nNathan: \"No, the classes are very small, usually about three or four students, and they are mixed age, so I sometimes sit next to a student who is maybe 12, or sometimes I sit next to someone who is 18.\"\nHost: \"Really? Does that work well?\"\nNathan: \"Yes, for example there's a boy of 13 at the school who's good at maths, I mean really good at maths, much better than me, and we're in the same math class and he helps me.\"\nHost: \"What other subjects do you study?\"\nNathan: \"We study the usual subjects: maths, English, science, geography, music, and so on. But we don't have to study anything, we can study what we like. We have two meetings every day, one in the morning and one after lunch. That's when we decide what classes we want to attend.\"\nHost: \"What time does school start and finish?\"\nNathan: \"We start at 9:00 in the morning and finish at 3:00 in the afternoon.\"\nHost: \"Does it cost a lot of money to study at the school?\"\nNathan: \"Yes, it's $20,000 a year, but not everyone has to pay. If you come from a poor family it costs less.\"\nHost: \"Do you think it's a good school?\"\nNathan: \"Yes, it's great! I love it. I learn what I want to learn and I learn when I want to learn, not when a teacher tells me.\"\nHost: \"Thank you, Nathan.",
+    "transcript": `[RADIO INTERVIEW TRANSCRIPT : BROOKLYN FREE SCHOOL]
+Host: "I am with Nathan King. He's a student at the Brooklyn Free School. Hi Nathan, and welcome to the program."
+Nathan: "Hi."
+Host: "So Nathan, how old are you, and which grade are you in?"
+Nathan: "I'm 15. In a normal school that's 10th grade, but at my school we don't have grades."
+Host: "Can you tell us a bit about the school? How big is it?"
+Nathan: "Well, the school has got two parts: one for students aged 4 to 11, and the other for students between 12 and 18. My part of the school has about 60 students."
+Host: "And does each class have a lot of students?"
+Nathan: "No, the classes are very small, usually about three or four students, and they are mixed age, so I sometimes sit next to a student who is maybe 12, or sometimes I sit next to someone who is 18."
+Host: "Really? Does that work well?"
+Nathan: "Yes, for example there's a boy of 13 at the school who's good at maths, I mean really good at maths, much better than me, and we're in the same math class and he helps me."
+Host: "What other subjects do you study?"
+Nathan: "We study the usual subjects: maths, English, science, geography, music, and so on. But we don't have to study anything, we can study what we like. We have two meetings every day, one in the morning and one after lunch. That's when we decide what classes we want to attend."
+Host: "What time does school start and finish?"
+Nathan: "We start at 9:00 in the morning and finish at 3:00 in the afternoon."
+Host: "Does it cost a lot of money to study at the school?"
+Nathan: "Yes, it's \$20,000 a year, but not everyone has to pay. If you come from a poor family it costs less."
+Host: "Do you think it's a good school?"
+Nathan: "Yes, it's great! I love it. I learn what I want to learn and I learn when I want to learn, not when a teacher tells me."
+Host: "Thank you, Nathan.`,
     "questions": [
       {
-        "id": "ln-0a",
-        "q": "Part A (Q1). Which sentence about Brooklyn Free School is NOT true?",
+        "id": "ln-part-a",
+        "q": "Part A. Which sentence about Brooklyn Free School is NOT true?",
         "options": [
           "Classes at the school are very small.",
           "They study the usual school subjects.",
@@ -31,28 +50,6 @@ const LISTENING_DRILLS = [
         ],
         "answer": 2,
         "expl": "Kunci: C (Nathan doesn't enjoy school). Transkrip: <u>'Do you think it\'s a good school? Yes, it\'s great! I love it.'</u> Pernyataan bahwa Nathan tidak menikmati sekolah adalah salah (NOT true)."
-      },
-      {
-        "id": "ln-0b",
-        "q": "Part A (Q2). What is the mandatory testing and homework policy at the school?",
-        "options": [
-          "Students take weekly standardized exams.",
-          "There are no tests, no homework, and no mandatory grades.",
-          "Homework is assigned only in advanced mathematics."
-        ],
-        "answer": 1,
-        "expl": "Kunci: B. Transkrip: <u>'There are no tests, no homework, and no mandatory grades.'</u>"
-      },
-      {
-        "id": "ln-0c",
-        "q": "Part A (Q3). What is Nathan's genuine attitude toward Brooklyn Free School?",
-        "options": [
-          "Nathan doesn't enjoy school.",
-          "Nathan finds the daily routine dull.",
-          "Nathan absolutely loves it and finds it inspiring."
-        ],
-        "answer": 2,
-        "expl": "Kunci: C. Transkrip: <u>'I absolutely love it. It\\'s an inspiring place to learn.'</u> Pernyataan bahwa Nathan tidak suka sekolah adalah keliru."
       },
       {
         "id": "ln-1",
@@ -74,7 +71,7 @@ const LISTENING_DRILLS = [
           "12-18"
         ],
         "answer": 2,
-        "expl": "Kunci: C (12-18). Transkrip: <u>'In my section of the school, students are aged 12 to 18...'</u>"
+        "expl": "Kunci: C (12-18). Transkrip: <u>'...the other for students between 12 and 18. My part of the school has about 60 students.'</u>"
       },
       {
         "id": "ln-3",
@@ -85,7 +82,7 @@ const LISTENING_DRILLS = [
           "66"
         ],
         "answer": 1,
-        "expl": "Kunci: B (60). Transkrip: <u>'...and there are about 60 students in total.'</u>"
+        "expl": "Kunci: B (60). Transkrip: <u>'My part of the school has about 60 students.'</u>"
       },
       {
         "id": "ln-4",
@@ -96,7 +93,7 @@ const LISTENING_DRILLS = [
           "always"
         ],
         "answer": 0,
-        "expl": "Kunci: A (sometimes). Transkrip: <u>'Actually, I rarely sit next to students who are only my age. We mix together.'</u> (Rarely/kadang-kadang, tidak selalu)."
+        "expl": "Kunci: A (sometimes). Transkrip: <u>'...they are mixed age, so I sometimes sit next to a student who is maybe 12, or sometimes I sit next to someone who is 18.'</u>"
       },
       {
         "id": "ln-5",
@@ -107,7 +104,7 @@ const LISTENING_DRILLS = [
           "18"
         ],
         "answer": 1,
-        "expl": "Kunci: B (13). Transkrip: <u>'...the boy who helps me with advanced mathematics is only 13 years old...'</u>"
+        "expl": "Kunci: B (13). Transkrip: <u>'...there\'s a boy of 13 at the school who\'s good at maths... and he helps me.'</u>"
       },
       {
         "id": "ln-6",
@@ -118,7 +115,7 @@ const LISTENING_DRILLS = [
           "9 a.m. to 4 p.m."
         ],
         "answer": 1,
-        "expl": "Kunci: B (9 a.m. to 3 p.m.). Transkrip: <u>'Our daily lessons run from 9:00 a.m. to 3:00 p.m.'</u>"
+        "expl": "Kunci: B (9 a.m. to 3 p.m.). Transkrip: <u>'We start at 9:00 in the morning and finish at 3:00 in the afternoon.'</u>"
       },
       {
         "id": "ln-7",
@@ -180,8 +177,8 @@ const LISTENING_DRILLS = [
           "3 years later",
           "5 years later"
         ],
-        "answer": 0,
-        "expl": "Kunci: A (2 years later). Transkrip: <u>'Two years later, Cyrus became even more famous with her music...'</u>"
+        "answer": 1,
+        "expl": "Kunci: B (3 years later). Transkrip: <u>'3 years later the double album Hannah Montana 2 meet Miley Cyrus hit number one on the billboard 200...'</u>"
       },
       {
         "id": "lm-5",
@@ -191,8 +188,8 @@ const LISTENING_DRILLS = [
           "155 million dollars",
           "115 million dollars"
         ],
-        "answer": 0,
-        "expl": "Kunci: A (55 million dollars). Transkrip: <u>'Her 3D concert movie obtained more than 55 million dollars at the box office...'</u>"
+        "answer": 1,
+        "expl": "Kunci: B (155 million dollars). Transkrip: <u>'...and 3D movie that earned more than 155 million dollars worldwide...'</u>"
       },
       {
         "id": "lm-6",
@@ -202,8 +199,8 @@ const LISTENING_DRILLS = [
           "2 #1 albums",
           "3 #1 albums"
         ],
-        "answer": 1,
-        "expl": "Kunci: B (2 #1 albums). Transkrip: <u>'...by the tender age of 16, Miley Cyrus had already earned two #1 albums on the Billboard charts.'</u>"
+        "answer": 0,
+        "expl": "Kunci: A (4 #1 albums). Transkrip: <u>'at 16 Miley Cyrus became the youngest artist to have four number one albums on the charts...'</u>"
       },
       {
         "id": "lm-7",
@@ -246,8 +243,8 @@ const LISTENING_DRILLS = [
           "sometimes",
           "few times"
         ],
-        "answer": 1,
-        "expl": "Kunci: B (sometimes). Transkrip: <u>'...she participated as a special guest star in the sitcom \\'Two and a Half Men\\'.'</u> (Tampil sebagai bintang tamu/kadang-kadang)."
+        "answer": 0,
+        "expl": "Kunci: A (many times). Transkrip: <u>'in 2012 she became a series regular on the sitcom Two and a Half Men...'</u> (Sebagai 'series regular', Miley tampil berulang kali / many times)."
       }
     ]
   },
