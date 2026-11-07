@@ -18,7 +18,8 @@ const LISTENING_DRILLS = [
   {
     id: 'lis-nathan',
     title: "Exercise 1: Radio Interview — Nathan's School (Brooklyn Free School)",
-    source: 'Latihan Dosen: Meeting 2 (Set 1)',
+    source: 'Latihan Dosen: Meeting 2 (Set 1) | Oxford Solutions British English',
+    audioUrl: 'audio/lis-nathan.mp3',
     transcript: `[RADIO INTERVIEW TRANSCRIPT]
 Host: "Welcome back to Education Today. Today we're visiting Brooklyn Free School in New York to speak with Nathan, a 16-year-old high school student. Nathan, tell us about how your school works."
 Nathan: "Hi! Well, Brooklyn Free School is really unique. There are no tests, no homework, and no mandatory grades. In my section of the school, students are aged 12 to 18, and there are about 60 students in total. We choose what we want to study every day."
@@ -81,7 +82,8 @@ Nathan: "I absolutely love it. It's an inspiring place to learn."`,
   {
     id: 'lis-miley',
     title: 'Exercise 2: Biography Profile — Miley Cyrus Short Biography',
-    source: 'Latihan Dosen: Meeting 2 (Set 2)',
+    source: 'Latihan Dosen: Meeting 2 (Set 2) | British Narrator Profile',
+    audioUrl: 'audio/lis-miley.mp3',
     transcript: `[BIOGRAPHY AUDIO TRANSCRIPT]
 Narrator: "Miley Cyrus was born to be a star. She was born on November 23rd, 1992, in Franklin, Tennessee. Cyrus became famous worldwide when she starred in the television show "Hannah Montana" on Disney Channel. Two years later, she expanded her fame into mainstream pop music. Her 3D concert movie obtained more than 55 million dollars at the box office on opening weekend. Remarkably, by age 16, Miley already had achieved two number-one albums on the Billboard charts. Her energetic single "Party in the USA" became her best-selling single across the United States. Many music critics and fans respect her because she fearlessly takes artistic risks. In 2011, she was officially ranked in Hollywood as the second richest person under 25. Later in 2012, Miley made a notable guest appearance in the sitcom "Two and a Half Men", participating a few times throughout the season."`,
     questions: [
@@ -160,7 +162,9 @@ Narrator: "Miley Cyrus was born to be a star. She was born on November 23rd, 199
   {
     id: 'lis-council',
     title: 'Exercise 3: IELTS Form Completion — Joining Youth Council (Roger Brown)',
-    source: 'Latihan Dosen: Meeting 2 (Set 3)',
+    source: 'Latihan Dosen: Meeting 2 (Set 3) | Cambridge IELTS 11 Test 2 (UK RP)',
+    audioUrl: 'audio/lis-council.mp3',
+    officialSourceUrl: 'https://mini-ielts.com/1296/listening/joining-the-youth-council',
     transcript: `[IELTS SECTION 1 CONVERSATION]
 Officer: "Good morning, Youth Council office. How can I help you?"
 Roger: "Hello, my name is Roger Brown, and I'd like to ask about joining the Youth Council."
@@ -213,7 +217,264 @@ Roger: "Yes, 4:30 pm is perfect. My mobile number is 07788 136711."`,
         expl: 'Kunci: C (disabled). Transkrip: <u>"work with young people who are disabled."</u>'
       }
     ]
-  }
+  },
+  {
+  "id": "lis-festival",
+  "title": "Exercise 4: Table & Note Completion — Stretton Community Festival",
+  "source": "Latihan Dosen: Meeting 2 (Set 4) | Cambridge IELTS 11 Test 4 (UK RP)",
+  "audioUrl": "audio/lis-festival.mp3",
+  "officialSourceUrl": "https://mini-ielts.com/1297/listening/stretton-festival",
+  "transcript": "[IELTS SECTION 1 CONVERSATION — STRETTON FESTIVAL]\nRob: \"Good morning. Stretton Festival box office. How can I help you?\"\nMelanie: \"Oh, hello. My family and I are on holiday in the area, and we've seen some posters about the festival this week. Could you tell me about some of the events, please?\"\nRob: \"Of course.\"\nMelanie: \"First of all, are there still tickets available for the jazz band on Saturday?\"\nRob: \"There are, but only £15. The £12 seats have all been sold.\"\nMelanie: \"OK. And the venue is the school, isn't it?\"\nRob: \"Yes, that's right, the secondary school. Make sure you don't go to the primary school by mistake! And there's an additional performer who isn't mentioned on the posters — Carolyn Hart is going to play with the band.\"\nMelanie: \"Oh, I think I've heard her on the radio. Doesn't she play the oboe, or flute or something?\"\nRob: \"Yes, the flute. She usually plays with symphony orchestras, and apparently this is her first time with a jazz band.\"\nMelanie: \"Well, I'd certainly like to hear her. Then the next thing I want to ask about is the duck races — I saw a poster beside a river. What are they, exactly?\"\nRob: \"Well, you buy a yellow plastic duck — or as many as you like — they're a pound each. And you write your name on each one. There'll be several races, depending on the number of ducks taking part. And John Stevens, a champion swimmer who lives locally, is going to start the races. All the ducks will be launched into the river at the back of the cinema, then they'll float along the river for 500 metres, as far as the railway bridge.\"\nMelanie: \"And are there any prizes?\"\nRob: \"Yes, the first duck in each race to arrive at the finishing line wins its owner free tickets for the concert on the last night of the festival.\"\nMelanie: \"You said you can buy a duck? I'm sure my children will both want one.\"\nRob: \"They're on sale at a stall in the market. You can't miss it — it's got an enormous sign showing a couple of ducks.\"\nMelanie: \"OK. I'll go there this afternoon. I remember walking past there yesterday. Now could you tell me something about the flower show, please?\"\nRob: \"Well, admission is free, and the show is being held in Bythwaite Hall.\"\nMelanie: \"Sorry, how do you spell that?\"\nRob: \"B-Y-T-H-W-A-I-T-E. Bythwaite.\"\nMelanie: \"Is it easy to find? I'm not very familiar with the town yet.\"\nRob: \"Oh, you won't have any problem. It's right in the centre of Stretton. It's the only old building in the town, so it's easy to recognise. But if you want to see the best flowers, you'll need to be there at 5 o'clock, when the prizes are presented by a well-known actor — Kevin Shapless.\"\nMelanie: \"Right. Now, what about the plays? I'd like to know which are suitable for my children, and which ones my husband and I might go to.\"\nRob: \"How old are your children?\"\nMelanie: \"Five and seven. What about The Mystery of Muldoon?\"\nRob: \"That's aimed at five to ten-year-olds.\"\nMelanie: \"Oh, right.\"\nRob: \"If you and your husband want to leave your children with a babysitter, you might like to see Fire and Flood — it's about events that really happened in Stretton two hundred years ago, and children might find it rather frightening.\"\nMelanie: \"I see. And what about the third play, Silly Sailor?\"\nRob: \"That's a comedy, and it's for young and old. It won an award in the Stretton Drama Festival a couple of months ago.\"\nMelanie: \"Fantastic. Thank you very much for your help!\"\nRob: \"You're very welcome. Enjoy the festival!\"",
+  "questions": [
+    {
+      "id": "fest-1",
+      "q": "1. [Jazz band] The venue for the Saturday jazz concert is the _____ school.",
+      "options": [
+        "primary",
+        "secondary",
+        "boarding",
+        "grammar"
+      ],
+      "answer": 1,
+      "expl": "Kunci: B (secondary). Transkrip: <u>\"Yes, that's right, the secondary school. Make sure you don't go to the primary school by mistake!\"</u>"
+    },
+    {
+      "id": "fest-2",
+      "q": "2. [Jazz band] Additional performer Carolyn Hart plays the _____.",
+      "options": [
+        "oboe",
+        "flute",
+        "violin",
+        "trumpet"
+      ],
+      "answer": 1,
+      "expl": "Kunci: B (flute). Transkrip: <u>\"Yes, the flute. She usually plays with symphony orchestras...\"</u>"
+    },
+    {
+      "id": "fest-3",
+      "q": "3. [Duck races] All the plastic ducks will be launched into the river at the back of the _____.",
+      "options": [
+        "railway bridge",
+        "cinema",
+        "town hall",
+        "market stall"
+      ],
+      "answer": 1,
+      "expl": "Kunci: B (cinema). Transkrip: <u>\"All the ducks will be launched into the river at the back of the cinema...\"</u>"
+    },
+    {
+      "id": "fest-4",
+      "q": "4. [Duck races] The prize for the winning duck in each race is tickets for the _____.",
+      "options": [
+        "jazz band",
+        "concert",
+        "drama show",
+        "flower exhibition"
+      ],
+      "answer": 1,
+      "expl": "Kunci: B (concert). Transkrip: <u>\"wins its owner free tickets for the concert on the last night of the festival.\"</u>"
+    },
+    {
+      "id": "fest-5",
+      "q": "5. [Duck races] Plastic ducks can be bought at a stall in the _____.",
+      "options": [
+        "school",
+        "cinema",
+        "market",
+        "library"
+      ],
+      "answer": 2,
+      "expl": "Kunci: C (market). Transkrip: <u>\"They're on sale at a stall in the market. You can't miss it...\"</u>"
+    },
+    {
+      "id": "fest-6",
+      "q": "6. [Flower show] Admission is free, and the flower show is being held in _____ Hall.",
+      "options": [
+        "Bythwaite",
+        "Blythewood",
+        "Braithwaite",
+        "Borthwick"
+      ],
+      "answer": 0,
+      "expl": "Kunci: A (Bythwaite). Transkrip: <u>\"B-Y-T-H-W-A-I-T-E. Bythwaite.\"</u>"
+    },
+    {
+      "id": "fest-7",
+      "q": "7. [Flower show] Prizes will be presented at 5:00 pm by a well-known _____.",
+      "options": [
+        "champion swimmer",
+        "actor",
+        "musician",
+        "mayor"
+      ],
+      "answer": 1,
+      "expl": "Kunci: B (actor). Transkrip: <u>\"...when the prizes are presented by a well-known actor — Kevin Shapless.\"</u>"
+    },
+    {
+      "id": "fest-8",
+      "q": "8. [Plays] The play \"The Mystery of Muldoon\" is suitable for:",
+      "options": [
+        "mainly for children (aged 5–10)",
+        "mainly for adults",
+        "suitable for people of all ages"
+      ],
+      "answer": 0,
+      "expl": "Kunci: A (mainly for children). Transkrip: <u>\"That's aimed at five to ten-year-olds.\"</u>"
+    },
+    {
+      "id": "fest-9",
+      "q": "9. [Plays] The play \"Fire and Flood\" is suitable for:",
+      "options": [
+        "mainly for children",
+        "mainly for adults",
+        "suitable for people of all ages"
+      ],
+      "answer": 1,
+      "expl": "Kunci: B (mainly for adults). Transkrip: <u>\"If you and your husband want to leave your children with a babysitter, you might like to see Fire and Flood... children might find it rather frightening.\"</u>"
+    },
+    {
+      "id": "fest-10",
+      "q": "10. [Plays] The comedy play \"Silly Sailor\" is suitable for:",
+      "options": [
+        "mainly for children",
+        "mainly for adults",
+        "suitable for people of all ages"
+      ],
+      "answer": 2,
+      "expl": "Kunci: C (suitable for people of all ages). Transkrip: <u>\"That's a comedy, and it's for young and old.\"</u>"
+    }
+  ]
+},
+  {
+  "id": "lis-conference",
+  "title": "Exercise 5: Note Completion — Future Directions in Computing Conference",
+  "source": "Latihan Dosen: Meeting 2 (Set 5) | Cambridge IELTS 6 Test 4 (UK RP)",
+  "audioUrl": "audio/lis-conference.mp3",
+  "officialSourceUrl": "https://mini-ielts.com/1298/listening/future-directions-in-computing",
+  "transcript": "[IELTS SECTION 1 CONVERSATION — COMPUTING CONFERENCE]\nClerk: \"Conference Centre Reservations. Good morning.\"\nWoman: \"Hi. I'm interested in the computing conference next month.\"\nClerk: \"Future Directions in Computing?\"\nWoman: \"Yes, that's right. Could I ask you a few questions about it?\"\nClerk: \"Of course.\"\nWoman: \"OK. I know the conference is for three days, but actually I want to attend on the Friday and Saturday only. Will that work out to be any cheaper?\"\nClerk: \"Let me have a look. Well, you could register for the two days separately, but that wouldn't actually save you very much as it still costs £35 for each day. In fact, if you register for the three days, you also get an invitation to a free dinner on the Saturday night, so that's probably the better option.\"\nWoman: \"Right, I'll do that. How much will the fees be in that case?\"\nClerk: \"It is £75.\"\nWoman: \"All right. I'd like to register for the full three days. Now, can I pay that by credit card?\"\nClerk: \"I'm afraid not. You'll have to send a cheque to us, or you can pay in person at the conference office.\"\nWoman: \"Fine. So it's probably easiest if I pay by cheque. Now then, what else do I need to arrange? How about accommodation? I guess that's not included in the price.\"\nClerk: \"No, I'm sorry, it's not. But we do have a few rooms available for delegates at the conference centre, if you'd like. Those are very cheap, but if you're interested, you'll need to book soon because there's always a heavy demand for them. They are only £15 per night, but they are very basic, and you'd have to get your own breakfast because they don't provide you with that. But it's very convenient because it's in the same building as the conference rooms. Oh, there's also a very reasonable guesthouse which is £25 per night, and I think that includes your breakfast.\"\nWoman: \"Is it close to the conference centre?\"\nClerk: \"It would be about a 10-minute walk away from here.\"\nWoman: \"I see. That sounds quite reasonable.\"\nClerk: \"Shall I send you a conference pack and an application form?\"\nWoman: \"Yes, please.\"\nClerk: \"OK. Now about the location. The conference centre is on South Park Road.\"\nWoman: \"Right.\"\nClerk: \"And it's next to the library.\"\nWoman: \"Right, thank you. And is there any public transport from the station?\"\nClerk: \"Yes, a taxi will cost about £5, or you can take bus number 21A from the station.\"\nWoman: \"Great. Thanks very much for all your help.\"\nClerk: \"You're welcome. Have a wonderful day.\"",
+  "questions": [
+    {
+      "id": "conf-1",
+      "q": "1. The total registration fee for attending the full three-day conference is £_____.",
+      "options": [
+        "35",
+        "70",
+        "75",
+        "105"
+      ],
+      "answer": 2,
+      "expl": "Kunci: C (75). Transkrip: <u>\"In fact, if you register for the three days... How much will the fees be in that case? It is £75.\"</u>"
+    },
+    {
+      "id": "conf-2",
+      "q": "2. Since credit cards are not accepted, advance payment must be made by _____ or upon arrival.",
+      "options": [
+        "cash",
+        "cheque",
+        "bank transfer",
+        "money order"
+      ],
+      "answer": 1,
+      "expl": "Kunci: B (cheque). Transkrip: <u>\"You'll have to send a cheque to us, or you can pay at the conference office.\"</u>"
+    },
+    {
+      "id": "conf-3",
+      "q": "3. Accommodation at the Conference Centre costs £_____ per night.",
+      "options": [
+        "10",
+        "15",
+        "25",
+        "35"
+      ],
+      "answer": 1,
+      "expl": "Kunci: B (15). Transkrip: <u>\"They are only £15 per night, but they are very basic...\"</u>"
+    },
+    {
+      "id": "conf-4",
+      "q": "4. Accommodation at the nearby Guest House costs £_____ per night (including breakfast).",
+      "options": [
+        "15",
+        "20",
+        "25",
+        "30"
+      ],
+      "answer": 2,
+      "expl": "Kunci: C (25). Transkrip: <u>\"there's a very reasonable guesthouse which is £25 per night, and I think that includes your breakfast.\"</u>"
+    },
+    {
+      "id": "conf-5",
+      "q": "5. The Guest House is approximately a _____ walk away from the Conference Centre.",
+      "options": [
+        "5-minute",
+        "10-minute",
+        "15-minute",
+        "20-minute"
+      ],
+      "answer": 1,
+      "expl": "Kunci: B (10-minute). Transkrip: <u>\"It would be about a 10-minute walk away from here.\"</u>"
+    },
+    {
+      "id": "conf-6",
+      "q": "6. The clerk will send the woman an application form and a _____.",
+      "options": [
+        "conference pack",
+        "hotel directory",
+        "campus map",
+        "speaker list"
+      ],
+      "answer": 0,
+      "expl": "Kunci: A (conference pack). Transkrip: <u>\"Shall I send you a conference pack and an application form?\"</u>"
+    },
+    {
+      "id": "conf-7",
+      "q": "7. The Conference Centre is located on _____ Park Road.",
+      "options": [
+        "North",
+        "South",
+        "East",
+        "West"
+      ],
+      "answer": 1,
+      "expl": "Kunci: B (South). Transkrip: <u>\"The conference centre is on South Park Road.\"</u>"
+    },
+    {
+      "id": "conf-8",
+      "q": "8. The Conference Centre building is located right next to the _____.",
+      "options": [
+        "train station",
+        "city council",
+        "library",
+        "shopping mall"
+      ],
+      "answer": 2,
+      "expl": "Kunci: C (library). Transkrip: <u>\"And it's next to the library.\"</u>"
+    },
+    {
+      "id": "conf-9",
+      "q": "9. Taking a taxi from the railway station to the Conference Centre costs approximately £_____.",
+      "options": [
+        "3",
+        "5",
+        "8",
+        "12"
+      ],
+      "answer": 1,
+      "expl": "Kunci: B (5). Transkrip: <u>\"Yes, a taxi will cost about £5...\"</u>"
+    },
+    {
+      "id": "conf-10",
+      "q": "10. Delegates can also reach the Conference Centre from the station by taking bus number _____.",
+      "options": [
+        "12A",
+        "15B",
+        "21A",
+        "32C"
+      ],
+      "answer": 2,
+      "expl": "Kunci: C (21A). Transkrip: <u>\"...or you can take bus number 21A.\"</u>"
+    }
+  ]
+}
 ];
 
 // ==========================================
@@ -222,115 +483,803 @@ Roger: "Yes, 4:30 pm is perfect. My mobile number is 07788 136711."`,
 
 const GRAMMAR_DRILLS = [
   {
-    id: 'g-pos',
-    title: 'Drill 1: Parts of Speech Mastery (Meeting 3)',
-    source: 'Latihan Dosen: Meeting 3 (Parts of Speech)',
-    questions: [
+    "id": "g-pos",
+    "title": "Drill 1: Parts of Speech Mastery — 8 Classes (Meeting 3, Part A)",
+    "source": "Dokumen Dosen: exercise of PART OF SPEECH (Section A - 40 Soal)",
+    "questions": [
       {
-        id: 'pos-1',
-        cat: 'NOUN',
-        q: '1. The engineer checked the _____ before starting the test.',
-        options: ['equipment', 'carefully', 'because', 'strong'],
-        answer: 0,
-        expl: 'Kunci: A (equipment). Kata benda (Noun) dibutuhkan sebagai objek setelah kata sandang "the".'
+        "id": "pos-1",
+        "cat": "NOUN",
+        "q": "1. The engineer checked the _____ before starting the test.",
+        "options": [
+          "equipment",
+          "carefully",
+          "because",
+          "strong"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (equipment). Kata benda (Noun) dibutuhkan sebagai direct object setelah kata sandang \"the\". \"Carefully\" adalah adverb, \"because\" adalah konjungsi, dan \"strong\" adalah adjective."
       },
       {
-        id: 'pos-2',
-        cat: 'NOUN',
-        q: '2. Regular _____ can prevent machine failure.',
-        options: ['maintains', 'maintenance', 'maintained', 'efficient'],
-        answer: 1,
-        expl: 'Kunci: B (maintenance). "Maintenance" adalah kata benda (Noun) yang berfungsi sebagai Subject kalimat.'
+        "id": "pos-2",
+        "cat": "NOUN",
+        "q": "2. Regular _____ can prevent machine failure.",
+        "options": [
+          "maintains",
+          "maintenance",
+          "maintained",
+          "efficient"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (maintenance). \"Maintenance\" adalah kata benda (Noun) berakhiran -ance yang menempati posisi Subject kalimat."
       },
       {
-        id: 'pos-3',
-        cat: 'PRONOUN',
-        q: '3. The engineers finished the test, and _____ wrote a report.',
-        options: ['they', 'them', 'their', 'theirs'],
-        answer: 0,
-        expl: 'Kunci: A (they). Kata ganti subjek jamak (Subject Pronoun) yang menggantikan "The engineers".'
+        "id": "pos-3",
+        "cat": "NOUN",
+        "q": "3. The _____ of the bridge requires accurate measurements.",
+        "options": [
+          "design",
+          "designed",
+          "designing",
+          "designs"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (design). Kata benda tunggal (Noun) dibutuhkan setelah \"The\" dan sebelum preposisi \"of\". Kata kerja tunggal \"requires\" menunjukkan subjek berbentuk tunggal (singular)."
       },
       {
-        id: 'pos-4',
-        cat: 'VERB',
-        q: '4. The machine _____ automatically when the temperature is too high.',
-        options: ['stops', 'stopping', 'stop', 'stopped'],
-        answer: 0,
-        expl: 'Kunci: A (stops). Subjek tunggal pihak ketiga (The machine) membutuhkan Simple Present Verb dengan akhiran -s.'
+        "id": "pos-4",
+        "cat": "NOUN",
+        "q": "4. Which word is a noun?",
+        "options": [
+          "efficient",
+          "improves",
+          "efficiently",
+          "efficiency"
+        ],
+        "answer": 3,
+        "expl": "Kunci: D (efficiency). Kata berakhiran sufiks -cy adalah Noun (kata benda). \"Efficient\" (adjective), \"improves\" (verb), \"efficiently\" (adverb)."
       },
       {
-        id: 'pos-5',
-        cat: 'ADJECTIVE',
-        q: '5. The technician used an _____ instrument.',
-        options: ['accuracy', 'accurately', 'accurate', 'accurateness'],
-        answer: 2,
-        expl: 'Kunci: C (accurate). Kata sifat (Adjective) dibutuhkan untuk menerangkan kata benda "instrument".'
+        "id": "pos-5",
+        "cat": "NOUN",
+        "q": "5. The laboratory has modern _____ for measuring temperature.",
+        "options": [
+          "tools",
+          "equips",
+          "predicts",
+          "discovery"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (tools). \"Tools\" adalah kata benda jamak (countable noun) yang tepat menduduki posisi objek setelah kata sifat \"modern\"."
       },
       {
-        id: 'pos-6',
-        cat: 'ADVERB',
-        q: '6. The technician measured the temperature _____.',
-        options: ['accurate', 'accuracy', 'accurately', 'accurateness'],
-        answer: 2,
-        expl: 'Kunci: C (accurately). Kata keterangan cara (Adverb of manner berakhiran -ly) menerangkan kata kerja "measured".'
+        "id": "pos-6",
+        "cat": "PRONOUN",
+        "q": "6. The engineers finished the test, and _____ wrote a report.",
+        "options": [
+          "they",
+          "them",
+          "their",
+          "theirs"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (they). Kata ganti subjek jamak (Subject Pronoun) untuk menggantikan \"The engineers\"."
       },
       {
-        id: 'pos-7',
-        cat: 'PREPOSITION',
-        q: '7. The sensor is _____ the two components.',
-        options: ['between', 'during', 'because', 'with'],
-        answer: 0,
-        expl: 'Kunci: A (between). Preposisi "between" digunakan untuk menunjukkan posisi di antara dua objek.'
+        "id": "pos-7",
+        "cat": "PRONOUN",
+        "q": "7. The machine is old, but _____ still works.",
+        "options": [
+          "he",
+          "they",
+          "it",
+          "them"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (it). \"It\" adalah kata ganti orang ketiga tunggal netral (Pronoun) yang menggantikan benda tunggal \"The machine\"."
       },
       {
-        id: 'pos-8',
-        cat: 'CONJUNCTION',
-        q: '8. The motor is small, _____ it is powerful.',
-        options: ['although', 'but', 'because', 'when'],
-        answer: 1,
-        expl: 'Kunci: B (but). Konjungsi koordinatif FANBOYS "but" digunakan untuk menghubungkan dua klausa yang berlawanan/kontras.'
+        "id": "pos-8",
+        "cat": "PRONOUN",
+        "q": "8. The technician gave the tools to _____.",
+        "options": [
+          "we",
+          "us",
+          "our",
+          "ours"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (us). \"Us\" adalah kata ganti objek (Object Pronoun) yang mengikuti kata depan (preposisi) \"to\"."
+      },
+      {
+        "id": "pos-9",
+        "cat": "PRONOUN",
+        "q": "9. This is the sensor _____ measures pressure.",
+        "options": [
+          "who",
+          "which",
+          "them",
+          "he"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (which). \"Which\" adalah kata ganti penghubung (Relative Pronoun) untuk merujuk pada benda/alat (\"the sensor\")."
+      },
+      {
+        "id": "pos-10",
+        "cat": "PRONOUN",
+        "q": "10. The students brought _____ own laptops.",
+        "options": [
+          "they",
+          "them",
+          "their",
+          "theirs"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (their). \"Their\" adalah Possessive Determiner/Adjective yang menerangkan kepemilikan sebelum frasa kata benda \"own laptops\"."
+      },
+      {
+        "id": "pos-11",
+        "cat": "VERB",
+        "q": "11. The machine _____ automatically when the temperature is too high.",
+        "options": [
+          "stops",
+          "stopping",
+          "stop",
+          "stopped"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (stops). Subjek orang ketiga tunggal (\"The machine\") dalam fakta ilmiah (Simple Present) memerlukan kata kerja tunggal berakhiran -s."
+      },
+      {
+        "id": "pos-12",
+        "cat": "VERB",
+        "q": "12. The engineers _____ the system last week.",
+        "options": [
+          "test",
+          "tests",
+          "tested",
+          "testing"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (tested). Keterangan waktu lampau yang pasti (\"last week\") menuntut bentuk Past Tense (V2) \"tested\"."
+      },
+      {
+        "id": "pos-13",
+        "cat": "VERB",
+        "q": "13. The device can _____ pressure accurately.",
+        "options": [
+          "measures",
+          "measuring",
+          "measure",
+          "measured"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (measure). Setelah modal auxiliary verb (\"can\"), kata kerja selalu dalam bentuk dasar tanpa imbuhan (Bare Infinitive / V1)."
+      },
+      {
+        "id": "pos-14",
+        "cat": "VERB",
+        "q": "14. The report _____ been completed.",
+        "options": [
+          "has",
+          "have",
+          "is",
+          "does"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (has). Kalimat pasif Present Perfect (\"has been completed\") dengan subjek tunggal \"The report\" menggunakan auxiliary \"has\"."
+      },
+      {
+        "id": "pos-15",
+        "cat": "VERB",
+        "q": "15. Students _____ wear safety equipment in the laboratory.",
+        "options": [
+          "should",
+          "can to",
+          "would to",
+          "are"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (should). Modal verb \"should\" diikuti langsung oleh bare infinitive \"wear\" untuk menyatakan anjuran/kewajiban standar laboratorium."
+      },
+      {
+        "id": "pos-16",
+        "cat": "ADJECTIVE",
+        "q": "16. The technician used an _____ instrument.",
+        "options": [
+          "accuracy",
+          "accurately",
+          "accurate",
+          "accurateness"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (accurate). Kata sifat (Adjective) dibutuhkan di depan kata benda \"instrument\" untuk menerangkan karakteristik alat."
+      },
+      {
+        "id": "pos-17",
+        "cat": "ADJECTIVE",
+        "q": "17. This motor is _____ than the previous model.",
+        "options": [
+          "efficient",
+          "more efficient",
+          "most efficiently",
+          "efficiency"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (more efficient). Derajat perbandingan komparatif (Comparative Adjective) untuk kata sifat bersuku kata banyak sebelum kata \"than\" adalah \"more efficient\"."
+      },
+      {
+        "id": "pos-18",
+        "cat": "ADJECTIVE",
+        "q": "18. The _____ cable needs to be replaced.",
+        "options": [
+          "damage",
+          "damaged",
+          "damagingly",
+          "damages"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (damaged). Participle adjective (V3) \"damaged\" berfungsi sebagai kata sifat yang menerangkan kondisi kabel (\"kabel yang rusak\")."
+      },
+      {
+        "id": "pos-19",
+        "cat": "ADJECTIVE",
+        "q": "19. Which word is an adjective?",
+        "options": [
+          "reliability",
+          "reliably",
+          "reliable",
+          "rely"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (reliable). Kata berakhiran -able adalah Adjective (kata sifat). \"Reliability\" (noun), \"reliably\" (adverb), \"rely\" (verb)."
+      },
+      {
+        "id": "pos-20",
+        "cat": "ADJECTIVE",
+        "q": "20. We need a _____ solution to the problem.",
+        "options": [
+          "practical",
+          "practically",
+          "practice",
+          "practiced"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (practical). Kata berakhiran sufiks -al di sini adalah Adjective yang memodifikasi kata benda \"solution\"."
+      },
+      {
+        "id": "pos-21",
+        "cat": "ADVERB",
+        "q": "21. The technician measured the temperature _____.",
+        "options": [
+          "accurate",
+          "accuracy",
+          "accurately",
+          "accurateness"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (accurately). Kata keterangan cara (Adverb of Manner berakhiran -ly) menerangkan bagaimana kata kerja \"measured\" dilaksanakan."
+      },
+      {
+        "id": "pos-22",
+        "cat": "ADVERB",
+        "q": "22. The new system works _____ efficiently than the old one.",
+        "options": [
+          "more",
+          "very",
+          "much",
+          "most"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (more). Bentuk perbandingan komparatif untuk adverb \"efficiently\" sebelum kata \"than\" adalah \"more efficiently\"."
+      },
+      {
+        "id": "pos-23",
+        "cat": "ADVERB",
+        "q": "23. The result was _____ accurate.",
+        "options": [
+          "extreme",
+          "extremely",
+          "extremity",
+          "extremes"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (extremely). Kata keterangan derajat (Adverb of Degree berakhiran -ly) memodifikasi dan menguatkan kata sifat \"accurate\"."
+      },
+      {
+        "id": "pos-24",
+        "cat": "ADVERB",
+        "q": "24. The machine was old; _____, it still worked.",
+        "options": [
+          "however",
+          "careful",
+          "because",
+          "under"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (however). \"However\" adalah Conjunctive Adverb (kata keterangan penghubung antar-klausa) yang menyatakan kontras di antara titik-koma dan koma."
+      },
+      {
+        "id": "pos-25",
+        "cat": "ADVERB",
+        "q": "25. The temperature increased; _____, the system stopped.",
+        "options": [
+          "therefore",
+          "slow",
+          "accurate",
+          "between"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (therefore). \"Therefore\" adalah Conjunctive Adverb yang menyatakan konsekuensi/akibat logis di antara titik-koma dan koma."
+      },
+      {
+        "id": "pos-26",
+        "cat": "PREPOSITION",
+        "q": "26. The sensor is _____ the two components.",
+        "options": [
+          "between",
+          "during",
+          "because",
+          "with"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (between). Preposisi \"between\" digunakan untuk menyatakan posisi ruang di antara dua objek/komponen."
+      },
+      {
+        "id": "pos-27",
+        "cat": "PREPOSITION",
+        "q": "27. The cable passes _____ the wall.",
+        "options": [
+          "through",
+          "at",
+          "for",
+          "during"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (through). Preposisi \"through\" menunjukkan lintasan yang menembus atau melewati bagian dalam suatu penghalang (dinding)."
+      },
+      {
+        "id": "pos-28",
+        "cat": "PREPOSITION",
+        "q": "28. The experiment was conducted _____ the laboratory.",
+        "options": [
+          "by",
+          "on",
+          "to",
+          "in"
+        ],
+        "answer": 3,
+        "expl": "Kunci: D (in). Preposisi \"in\" digunakan untuk menunjukkan keberadaan atau aktivitas di dalam ruangan tertutup/laboratorium."
+      },
+      {
+        "id": "pos-29",
+        "cat": "PREPOSITION",
+        "q": "29. The device was repaired _____ the technician.",
+        "options": [
+          "with",
+          "by",
+          "between",
+          "during"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (by). Preposisi \"by\" digunakan dalam konstruksi pasif (\"was repaired\") untuk menandai pelaku (agent) perbaikan."
+      },
+      {
+        "id": "pos-30",
+        "cat": "PREPOSITION",
+        "q": "30. The machine stopped _____ a power failure.",
+        "options": [
+          "because of",
+          "between",
+          "through",
+          "on"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (because of). \"Because of\" adalah frasa preposisi majemuk yang diikuti frasa kata benda (\"a power failure\") untuk menunjukkan penyebab."
+      },
+      {
+        "id": "pos-31",
+        "cat": "CONJUNCTION",
+        "q": "31. The machine stopped _____ the temperature was too high.",
+        "options": [
+          "although",
+          "but",
+          "or",
+          "because"
+        ],
+        "answer": 3,
+        "expl": "Kunci: D (because). Konjungsi subordinatif \"because\" menghubungkan klausa alasan (\"the temperature was too high\") dengan klausa utama tanpa tanda koma."
+      },
+      {
+        "id": "pos-32",
+        "cat": "CONJUNCTION",
+        "q": "32. The motor is small, _____ it is powerful.",
+        "options": [
+          "although",
+          "but",
+          "because",
+          "when"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (but). Konjungsi koordinatif FANBOYS \"but\" didahului tanda koma untuk menggabungkan dua klausa independen yang bertentangan/kontras."
+      },
+      {
+        "id": "pos-33",
+        "cat": "CONJUNCTION",
+        "q": "33. The test failed, _____ we repeated it.",
+        "options": [
+          "so",
+          "although",
+          "because",
+          "while"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (so). Konjungsi koordinatif FANBOYS \"so\" didahului koma untuk menyatakan hubungan hasil atau akibat langsung."
+      },
+      {
+        "id": "pos-34",
+        "cat": "CONJUNCTION",
+        "q": "34. _____ the device is expensive, it is reliable.",
+        "options": [
+          "Although",
+          "And",
+          "Or",
+          "So"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (Although). Konjungsi subordinatif \"Although\" di awal kalimat majemuk bertingkat (Complex Sentence) menyatakan konsesi/kontras."
+      },
+      {
+        "id": "pos-35",
+        "cat": "CONJUNCTION",
+        "q": "35. Call the technician _____ the system stops unexpectedly.",
+        "options": [
+          "and",
+          "but",
+          "because of",
+          "if"
+        ],
+        "answer": 3,
+        "expl": "Kunci: D (if). Konjungsi subordinatif bersyarat \"if\" memperkenalkan klausa kondisi di masa mendatang."
+      },
+      {
+        "id": "pos-36",
+        "cat": "INTERJECTION",
+        "q": "36. _____! I forgot to save the file.",
+        "options": [
+          "Wow",
+          "Because",
+          "Oops",
+          "Carefully"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (Oops). Kata seru \"Oops!\" secara universal dipakai untuk mengekspresikan kesadaran akan kekeliruan atau kecerobohan yang tak disengaja."
+      },
+      {
+        "id": "pos-37",
+        "cat": "INTERJECTION",
+        "q": "37. _____! The prototype works perfectly.",
+        "options": [
+          "Wow",
+          "Although",
+          "Under",
+          "Efficiently"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (Wow). Kata seru \"Wow!\" mengekspresikan rasa kagum, kepuasan, atau apresiasi tinggi terhadap hasil kerja prototipe."
+      },
+      {
+        "id": "pos-38",
+        "cat": "INTERJECTION",
+        "q": "38. _____! We finally solved the problem.",
+        "options": [
+          "Ghoshhhhh",
+          "Because",
+          "Through",
+          "Great"
+        ],
+        "answer": 3,
+        "expl": "Kunci: D (Great). Kata seru \"Great!\" digunakan untuk merayakan keberhasilan atau kepuasan setelah memecahkan suatu permasalahan rumit."
+      },
+      {
+        "id": "pos-39",
+        "cat": "INTERJECTION",
+        "q": "39. _____ no! The computer has stopped.",
+        "options": [
+          "Oh",
+          "So",
+          "And",
+          "Very"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (Oh). \"Oh no!\" adalah ungkapan seru (interjection phrase) umum yang menyatakan rasa kaget atau cemas atas kendala sistem yang mendadak mati."
+      },
+      {
+        "id": "pos-40",
+        "cat": "INTERJECTION",
+        "q": "40. Which word is an interjection?",
+        "options": [
+          "Excellent!",
+          "efficient",
+          "efficiency",
+          "efficiently"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (Excellent!). \"Excellent!\" yang diakhiri tanda seru berfungsi sebagai kata seru (Interjection) untuk memuji atau menyatakan apresiasi tinggi."
       }
     ]
   },
   {
-    id: 'g-sent-types',
-    title: 'Drill 2: Simple, Compound, & Complex Sentences (Meeting 4)',
-    source: 'Latihan Dosen: Meeting 4 (Sentence Types)',
-    questions: [
+    "id": "g-pos-academic",
+    "title": "Drill 2: Parts of Speech in Academic Sentences (Meeting 3, Part B)",
+    "source": "Dokumen Dosen: exercise of PART OF SPEECH (Section B - 10 Soal)",
+    "questions": [
       {
-        id: 'st-1',
-        q: '1. Identify the sentence type:\n"The internet helps students to find information quickly."',
-        options: ['Simple Sentence', 'Compound Sentence', 'Complex Sentence', 'Compound-Complex Sentence'],
-        answer: 0,
-        expl: 'Kunci: A (Simple Sentence). Kalimat ini hanya memiliki 1 klausa independen (Subject: The internet, Verb: helps).'
+        "id": "pos-b1",
+        "cat": "NOUN",
+        "q": "1. The students collected several __________ for their research, and they analyzed them carefully before writing the report.",
+        "options": [
+          "information",
+          "informative",
+          "inform",
+          "informatively"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (information). Posisi setelah determiner \"several\" dan sebelum frasa preposisi \"for their research\" membutuhkan Noun (kata benda)."
       },
       {
-        id: 'st-2',
-        q: '2. Identify the sentence type:\n"I like programming, and I also enjoy designing websites."',
-        options: ['Simple Sentence', 'Compound Sentence', 'Complex Sentence', 'Compound-Complex Sentence'],
-        answer: 1,
-        expl: 'Kunci: B (Compound Sentence). Terdiri dari 2 klausa independen yang dihubungkan konjungsi koordinatif FANBOYS "and" dengan tanda koma.'
+        "id": "pos-b2",
+        "cat": "PRONOUN",
+        "q": "2. Rina submitted the assignment before the deadline, and the lecturer praised __________ for her careful work.",
+        "options": [
+          "she",
+          "hers",
+          "herself",
+          "her"
+        ],
+        "answer": 3,
+        "expl": "Kunci: D (her). Kata kerja transitif \"praised\" membutuhkan Object Pronoun pihak ketiga tunggal perempuan (\"her\")."
       },
       {
-        id: 'st-3',
-        q: '3. Identify the sentence type:\n"She stayed at home because it was raining heavily."',
-        options: ['Simple Sentence', 'Compound Sentence', 'Complex Sentence', 'Compound-Complex Sentence'],
-        answer: 2,
-        expl: 'Kunci: C (Complex Sentence). Terdiri dari 1 klausa independen ("She stayed at home") dan 1 klausa dependen diawali subordinator "because".'
+        "id": "pos-b3",
+        "cat": "VERB",
+        "q": "3. The engineers __________ the new system, and they will present the results tomorrow.",
+        "options": [
+          "tested",
+          "testing",
+          "test",
+          "tests"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (tested). Finite Verb dalam bentuk Past Tense (\"tested\") menyatakan pengujian yang sudah tuntas dilaksanakan sebelum hasil dipresentasikan besok."
       },
       {
-        id: 'st-4',
-        q: '4. Identify the sentence type:\n"The server crashed, so the technician fixed it immediately."',
-        options: ['Simple Sentence', 'Compound Sentence', 'Complex Sentence', 'Compound-Complex Sentence'],
-        answer: 1,
-        expl: 'Kunci: B (Compound Sentence). Dua klausa independen dihubungkan oleh FANBOYS "so" untuk menyatakan akibat logis.'
+        "id": "pos-b4",
+        "cat": "ADJECTIVE",
+        "q": "4. The university bought a __________ laboratory computer, and the students used it to complete their programming project.",
+        "options": [
+          "powerful new black Japanese",
+          "new powerful Japanese black",
+          "Japanese black powerful new",
+          "black Japanese new powerful"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (powerful new black Japanese). Urutan standar susunan kata sifat (Royal Order of Adjectives): Opinion (powerful) → Age (new) → Color (black) → Origin/Nationality (Japanese)."
       },
       {
-        id: 'st-5',
-        q: '5. Identify the sentence type:\n"If students practice every day, they will become better at programming."',
-        options: ['Simple Sentence', 'Compound Sentence', 'Complex Sentence', 'Compound-Complex Sentence'],
-        answer: 2,
-        expl: 'Kunci: C (Complex Sentence). Klausa dependen bersyarat ("If students practice every day,") diletakkan di depan dengan koma sebelum induk kalimat.'
+        "id": "pos-b5",
+        "cat": "ADVERB",
+        "q": "5. The students completed the experiment __________, and they submitted the report before the lecturer arrived.",
+        "options": [
+          "careful",
+          "carefully",
+          "care",
+          "carefulness"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (carefully). Dibutuhkan Adverb of Manner (-ly) untuk memodifikasi bagaimana kata kerja \"completed\" dilakukan."
+      },
+      {
+        "id": "pos-b6",
+        "cat": "PREPOSITION",
+        "q": "6. The researcher stored the important data __________ a secure server, and she checked the files every evening.",
+        "options": [
+          "at",
+          "on",
+          "by",
+          "from"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (on). Dalam konteks komputasi akademik, data disimpan \"on a server\" atau \"on a cloud drive\" (menggunakan preposisi \"on\")."
+      },
+      {
+        "id": "pos-b7",
+        "cat": "CONJUNCTION",
+        "q": "7. The internet connection was unstable, __________ the students continued their online presentation successfully.",
+        "options": [
+          "because",
+          "although",
+          "so that",
+          "but"
+        ],
+        "answer": 3,
+        "expl": "Kunci: D (but). Dua klausa independen yang menunjukkan kontras/pertentangan dan dipisahkan tanda koma memerlukan konjungsi koordinatif FANBOYS \"but\"."
+      },
+      {
+        "id": "pos-b8",
+        "cat": "INTERJECTION",
+        "q": "8. __________! The computer suddenly restarted, and we had not saved the latest version of our project.",
+        "options": [
+          "However",
+          "Unfortunately",
+          "Wow",
+          "Oh No"
+        ],
+        "answer": 3,
+        "expl": "Kunci: D (Oh No). Ungkapan seru (Interjection) \"Oh No!\" paling tepat menggambarkan rasa terkejut dan kesal atas insiden komputer mendadak restart."
+      },
+      {
+        "id": "pos-b9",
+        "cat": "ADVERB",
+        "q": "9. The lecturer explained the complicated concept __________, so the students could understand it easily.",
+        "options": [
+          "clear",
+          "clearly",
+          "clarity",
+          "clearing"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (clearly). Kata keterangan cara (Adverb of Manner) \"clearly\" diperlukan untuk memodifikasi kata kerja \"explained\"."
+      },
+      {
+        "id": "pos-b10",
+        "cat": "ADJECTIVE",
+        "q": "10. The researchers developed an __________ application, and it helped users manage their daily activities more efficiently.",
+        "options": [
+          "innovative useful",
+          "useful innovation",
+          "innovatively use",
+          "innovation useful"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (innovative useful). Artikel \"an\" mewajibkan kata berikutnya diawali bunyi vokal (\"innovative\" diawali /ɪ/), berfungsi sebagai kata sifat berurutan untuk kata benda \"application\"."
+      }
+    ]
+  },
+  {
+    "id": "g-sent-types",
+    "title": "Drill 3: Simple, Compound, & Complex Sentences (Meeting 4)",
+    "source": "Slide Kuliah Dosen: Meeting 4 - Sentences (10 Soal Otentik)",
+    "questions": [
+      {
+        "id": "st-1",
+        "cat": "SIMPLE",
+        "q": "1. Identify the sentence type:\n\"The internet helps students to find information quickly.\"",
+        "options": [
+          "Simple Sentence",
+          "Compound Sentence",
+          "Complex Sentence",
+          "Compound-Complex Sentence"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (Simple Sentence). Kalimat ini hanya memiliki 1 klausa independen (Subject: The internet, Verb: helps)."
+      },
+      {
+        "id": "st-2",
+        "cat": "COMPOUND",
+        "q": "2. Identify the sentence type:\n\"I like programming, and I also enjoy designing websites.\"",
+        "options": [
+          "Simple Sentence",
+          "Compound Sentence",
+          "Complex Sentence",
+          "Compound-Complex Sentence"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (Compound Sentence). Terdiri dari 2 klausa independen yang dihubungkan konjungsi koordinatif FANBOYS \"and\" dengan tanda koma."
+      },
+      {
+        "id": "st-3",
+        "cat": "COMPLEX",
+        "q": "3. Identify the sentence type:\n\"She stayed at home because it was raining heavily.\"",
+        "options": [
+          "Simple Sentence",
+          "Compound Sentence",
+          "Complex Sentence",
+          "Compound-Complex Sentence"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (Complex Sentence). Terdiri dari 1 klausa independen (\"She stayed at home\") dan 1 klausa dependen diawali subordinator \"because\"."
+      },
+      {
+        "id": "st-4",
+        "cat": "COMPOUND",
+        "q": "4. Identify the sentence type:\n\"We use computers every day, but we sometimes forget how powerful they are.\"",
+        "options": [
+          "Simple Sentence",
+          "Compound Sentence",
+          "Complex Sentence",
+          "Compound-Complex Sentence"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (Compound Sentence). Dua klausa independen dihubungkan oleh FANBOYS \"but\" dengan tanda koma untuk menyatakan kontras."
+      },
+      {
+        "id": "st-5",
+        "cat": "COMPLEX",
+        "q": "5. Identify the sentence type:\n\"Although he was nervous, he gave a good presentation.\"",
+        "options": [
+          "Simple Sentence",
+          "Compound Sentence",
+          "Complex Sentence",
+          "Compound-Complex Sentence"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (Complex Sentence). Terdiri dari klausa dependen diawali subordinator \"Although\" di depan (dengan koma) dan klausa independen."
+      },
+      {
+        "id": "st-6",
+        "cat": "COMPLEX",
+        "q": "6. Identify the sentence type:\n\"Many students join online courses because they want to improve their skills.\"",
+        "options": [
+          "Simple Sentence",
+          "Compound Sentence",
+          "Complex Sentence",
+          "Compound-Complex Sentence"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (Complex Sentence). Terdiri dari klausa independen utama dan klausa dependen yang diawali subordinator alasan \"because\"."
+      },
+      {
+        "id": "st-7",
+        "cat": "COMPOUND",
+        "q": "7. Identify the sentence type:\n\"The server crashed, so the technician fixed it immediately.\"",
+        "options": [
+          "Simple Sentence",
+          "Compound Sentence",
+          "Complex Sentence",
+          "Compound-Complex Sentence"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (Compound Sentence). Dua klausa independen dihubungkan oleh FANBOYS \"so\" dengan tanda koma untuk menyatakan akibat logis."
+      },
+      {
+        "id": "st-8",
+        "cat": "SIMPLE",
+        "q": "8. Identify the sentence type:\n\"Computers are very useful in education.\"",
+        "options": [
+          "Simple Sentence",
+          "Compound Sentence",
+          "Complex Sentence",
+          "Compound-Complex Sentence"
+        ],
+        "answer": 0,
+        "expl": "Kunci: A (Simple Sentence). Hanya memiliki 1 klausa independen lengkap (Subject: Computers, Linking Verb: are, Subject Complement: very useful)."
+      },
+      {
+        "id": "st-9",
+        "cat": "COMPOUND",
+        "q": "9. Identify the sentence type:\n\"I wanted to buy a new laptop, but it was too expensive.\"",
+        "options": [
+          "Simple Sentence",
+          "Compound Sentence",
+          "Complex Sentence",
+          "Compound-Complex Sentence"
+        ],
+        "answer": 1,
+        "expl": "Kunci: B (Compound Sentence). Dua klausa independen digabungkan oleh FANBOYS \"but\" dengan koma."
+      },
+      {
+        "id": "st-10",
+        "cat": "COMPLEX",
+        "q": "10. Identify the sentence type:\n\"If students practice every day, they will become better at programming.\"",
+        "options": [
+          "Simple Sentence",
+          "Compound Sentence",
+          "Complex Sentence",
+          "Compound-Complex Sentence"
+        ],
+        "answer": 2,
+        "expl": "Kunci: C (Complex Sentence). Klausa dependen bersyarat (\"If students practice every day,\") diletakkan di depan dengan koma sebelum induk kalimat."
       }
     ]
   }
@@ -894,6 +1843,7 @@ const UTS_EXAM_DATA = {
       id: 'uts-l1',
       pts: 5,
       clo: 'CLO 1',
+      audioUrl: 'audio/uts-lis-1.mp3',
       audioSim: `[ACADEMIC LECTURE EXCERPT — COMPUTER SCIENCE]
 Professor: "Good morning class. Today we are initiating our unit on algorithmic optimization. Now, many novice programmers assume optimization simply means shortening lines of code. However, our primary objective this morning is to demonstrate how data structures directly dictate memory allocation and execution time, especially in high-throughput database systems. Therefore, please observe this benchmark graph..."`,
       q: "1. What is the primary purpose of the professor's lecture?",
@@ -910,6 +1860,7 @@ Professor: "Good morning class. Today we are initiating our unit on algorithmic 
       id: 'uts-l2',
       pts: 5,
       clo: 'CLO 1',
+      audioUrl: 'audio/uts-lis-2.mp3',
       audioSim: `[CAMPUS CONSULTATION — STUDENT & ACADEMIC ADVISOR]
 Advisor: "Come in, Dimas. I received your email regarding course prerequisites. You mentioned wanting to take Advanced Software Engineering next semester. However, the departmental catalog strictly requires that you must have completed Object-Oriented Programming with a minimum grade of B before enrolling."
 Dimas: "I see. I took OOP last semester and received an A-, but my grade sheet hasn't updated on the online portal yet."
@@ -928,6 +1879,7 @@ Advisor: "In that case, bring a signed verification slip from your instructor to
       id: 'uts-l3',
       pts: 5,
       clo: 'CLO 1',
+      audioUrl: 'audio/uts-lis-3.mp3',
       audioSim: `[SEMINAR ANNOUNCEMENT — FACULTY OF INFORMATICS]
 Host: "Attention all attendees. Before Dr. Hartono delivers the keynote on Artificial Intelligence ethics, please take note of our workshop schedule. The interactive lab breakout session will take place in Multimedia Lab 3 on the second floor, not the auditorium as printed in the flyer. Furthermore, all participants requiring a certificate of participation must scan the QR code located near the exit doors prior to 4:30 PM."`,
       q: '3. What specific detail did the host correct regarding the workshop schedule?',
@@ -944,6 +1896,7 @@ Host: "Attention all attendees. Before Dr. Hartono delivers the keynote on Artif
       id: 'uts-l4',
       pts: 5,
       clo: 'CLO 1',
+      audioUrl: 'audio/uts-lis-4.mp3',
       audioSim: `[STUDY GROUP DISCUSSION — UNIVERSITY LIBRARY]
 Aisha: "So for our research outline on cloud storage security, we already have our topic sentence and two supporting arguments regarding data encryption and redundancy. What we're lacking is empirical statistical evidence to support our second claim."
 Budi: "Actually, I found a 2025 survey from the IEEE Computer Society showing that 73% of cloud breaches were due to misconfigured access credentials rather than faulty cryptographic algorithms."
@@ -962,6 +1915,7 @@ Aisha: "That is perfect! That precisely reinforces our argument that human admin
       id: 'uts-l5',
       pts: 5,
       clo: 'CLO 1',
+      audioUrl: 'audio/uts-lis-5.mp3',
       audioSim: `[CAMPUS BRIEFING — UTS EXAM PREPARATION]
 Proctor: "Welcome students. Please listen attentively to the examination guidelines. To answer the multiple-choice questions on your LJK sheet, a 2B pencil is mandatory; pens cannot be scanned by the optical grader. However, for Section 4, the paragraph outline writing task, you must use a black or blue pen. You are strictly prohibited from bringing cell phones or smartwatches to your desk. Arrive at least 30 minutes early, as any student arriving even one second late will face immediate disqualification."`,
       q: '5. What is the mandatory rule regarding the Writing section of the exam?',
@@ -1533,40 +2487,42 @@ function renderListeningDrills() {
           </div>
         </div>
 
-        <div class="passage-card" style="background: var(--blue-soft); border-color: var(--blue);">
-          <h4>🎧 Audio Transcript &amp; Dialogue Scenario:</h4>
-
-          <!-- Audio Player Bar -->
-          <div class="audio-player-bar">
-            <div class="audio-controls-left">
-              <button type="button" class="audio-btn audio-btn-play" id="btn-audio-${drill.id}" onclick="toggleListeningAudio('${drill.id}', decodeURIComponent('${encodeURIComponent(drill.transcript)}'))">
-                ▶ Putar Audio
-              </button>
-              <button type="button" class="audio-btn audio-btn-stop" onclick="stopPassageAudio()">
-                ⏹ Stop
-              </button>
-              <div class="audio-speed-wrap">
-                <span>Kecepatan:</span>
-                <select class="audio-speed-select" id="speed-${drill.id}" onchange="changeAudioSpeed('${drill.id}')">
-                  <option value="0.85">0.85x (Pelan)</option>
-                  <option value="1.0" selected>1.0x (Normal)</option>
-                  <option value="1.15">1.15x (Cepat)</option>
-                </select>
-              </div>
+        <div class="audio-player-box">
+          <div class="audio-player-header">
+            <div class="audio-player-title">
+              <span>🎙️ British Audio Track</span>
+              <span class="audio-player-accent-badge">🇬🇧 UK RP Accent</span>
             </div>
-            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-              <span class="audio-status-pill" id="status-${drill.id}">● Siap Diputar</span>
-              <button type="button" class="blind-mode-toggle" id="btn-blind-${drill.id}" onclick="toggleBlindTranscript('${drill.id}')">
-                🙈 Uji Telinga (Sembunyikan)
-              </button>
+            <div style="display:flex; gap:6px; align-items:center;">
+              <span style="font-size:12px; font-weight:700; color:var(--ink-soft);">Speed:</span>
+              <button type="button" class="audio-speed-btn" onclick="setAudioSpeed('audio-${drill.id}', 0.8, this)">0.8x</button>
+              <button type="button" class="audio-speed-btn active" onclick="setAudioSpeed('audio-${drill.id}', 1.0, this)">1.0x</button>
+              <button type="button" class="audio-speed-btn" onclick="setAudioSpeed('audio-${drill.id}', 1.2, this)">1.2x</button>
             </div>
           </div>
-
-          <div class="blind-banner-hint" id="blind-hint-${drill.id}">
-            <span>🎧 <strong>Mode Uji Telinga Aktif:</strong> Transkrip diburamkan agar Anda melatih kepekaan mendengar. Tekan tombol Putar Audio di atas, lalu jawab pertanyaan di bawah!</span>
+          
+          <div class="audio-player-controls">
+            <audio id="audio-${drill.id}" controls preload="metadata" style="width: 100%;">
+              <source src="${drill.audioUrl}" type="audio/mpeg">
+              Browser Anda tidak mendukung audio HTML5.
+            </audio>
           </div>
 
-          <pre id="transcript-${drill.id}" class="transcript-content" style="white-space: pre-wrap; font-family: var(--font); margin: 0; font-size: 14px; line-height: 1.6;">${escapeHtml(drill.transcript)}</pre>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; flex-wrap:wrap; gap:8px;">
+            <button type="button" class="transcript-toggle-btn" onclick="toggleTranscript('trans-${drill.id}', this)">
+              👁️ Tampilkan Transkrip Teks
+            </button>
+            ${drill.officialSourceUrl ? `
+              <a href="${drill.officialSourceUrl}" target="_blank" rel="noopener noreferrer" style="font-size:12px; font-weight:700; color:#0056b3; text-decoration:underline;">
+                🔗 Buka Audio Asli Cambridge IELTS 11 ↗
+              </a>
+            ` : ''}
+          </div>
+
+          <div class="transcript-collapsible" id="trans-${drill.id}">
+            <strong style="display:block; margin-bottom:4px; font-size:12px; color:var(--ink-soft); font-family:var(--mono);">TRANSCRIPT:</strong>
+            <pre style="white-space: pre-wrap; font-family: var(--font); margin: 0; font-size: 13.5px; line-height: 1.6; background:#fff; padding:10px; border-radius:8px; border:1px solid #ddd;">${escapeHtml(drill.transcript)}</pre>
+          </div>
         </div>
 
         <div class="drilling-questions-wrap">
@@ -1609,6 +2565,7 @@ function renderListeningDrills() {
   });
 
   container.innerHTML = html;
+  updateListeningBadge();
 }
 
 window.handleListeningAnswer = function(drillId, questionId, selectedIdx) {
@@ -1720,6 +2677,7 @@ function renderGrammarDrills() {
   });
 
   container.innerHTML = html;
+  updateGrammarBadge();
 }
 
 window.handleGrammarAnswer = function(drillId, questionId, selectedIdx) {
@@ -2087,19 +3045,28 @@ function createExamQuestionHTML(q, section) {
   let extraBox = '';
   if (q.audioSim) {
     extraBox = `
-      <div class="passage-card" style="background: var(--blue-soft); border-color: var(--blue); margin-bottom: 12px;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px; flex-wrap:wrap; gap:6px;">
-          <strong style="font-family: var(--mono); font-size: 12px; color: #1e556e;">🎧 AUDIO TRANSCRIPT SIMULATION:</strong>
+      <div class="audio-player-box" style="margin-bottom: 14px;">
+        <div class="audio-player-header">
+          <div class="audio-player-title">
+            <span>🎧 Audio Butir Soal ${escapeHtml(q.id.replace('uts-l', ''))}</span>
+            <span class="audio-player-accent-badge">🇬🇧 UK Accent</span>
+          </div>
           <div style="display:flex; gap:6px; align-items:center;">
-            <button type="button" class="btn-flag-q" id="btn-audio-${q.id}" onclick="playPassageAudio('${q.id}', decodeURIComponent('${encodeURIComponent(q.audioSim)}'))">
-              ▶ Putar Audio
-            </button>
-            <button type="button" class="btn-flag-q" onclick="stopPassageAudio()">
-              ⏹ Stop
-            </button>
+            <button type="button" class="audio-speed-btn" onclick="setAudioSpeed('audio-${q.id}', 0.8, this)">0.8x</button>
+            <button type="button" class="audio-speed-btn active" onclick="setAudioSpeed('audio-${q.id}', 1.0, this)">1.0x</button>
           </div>
         </div>
-        <pre style="white-space: pre-wrap; font-family: var(--font); margin: 0; font-size: 13.5px; line-height: 1.5;">${escapeHtml(q.audioSim)}</pre>
+        <audio id="audio-${q.id}" controls preload="metadata" style="width: 100%;">
+          <source src="${q.audioUrl}" type="audio/mpeg">
+        </audio>
+        <div style="margin-top: 8px;">
+          <button type="button" class="transcript-toggle-btn" style="font-size:11.5px; padding:4px 10px;" onclick="toggleTranscript('trans-${q.id}', this)">
+            👁️ Tampilkan Transkrip Audio
+          </button>
+          <div class="transcript-collapsible" id="trans-${q.id}">
+            <pre style="white-space: pre-wrap; font-family: var(--font); margin: 6px 0 0; font-size: 13px; line-height: 1.5; background:#fff; padding:8px; border-radius:6px; border:1px solid #ddd;">${escapeHtml(q.audioSim)}</pre>
+          </div>
+        </div>
       </div>
     `;
   } else if (q.passage) {
@@ -2866,3 +3833,25 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 }
+
+// Audio Player Helpers
+window.setAudioSpeed = function(audioId, speed, btn) {
+  const audio = document.getElementById(audioId);
+  if (audio) {
+    audio.playbackRate = speed;
+  }
+  if (btn && btn.parentElement) {
+    const btns = btn.parentElement.querySelectorAll('.audio-speed-btn');
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+};
+
+window.toggleTranscript = function(transId, btn) {
+  const transEl = document.getElementById(transId);
+  if (!transEl) return;
+  const isShown = transEl.classList.toggle('show');
+  if (btn) {
+    btn.textContent = isShown ? '🙈 Sembunyikan Transkrip' : '👁️ Tampilkan Transkrip Teks';
+  }
+};

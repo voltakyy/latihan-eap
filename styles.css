@@ -1377,6 +1377,99 @@ textarea.outline-input {
   color: var(--tomato);
 }
 
+/* ================= Modern British Audio Player ================= */
+.audio-player-box {
+  background: #f0f7fa;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-sm);
+}
+.audio-player-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.audio-player-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 14.5px;
+  color: #1e556e;
+}
+.audio-player-accent-badge {
+  background: #00247d;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.audio-player-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.audio-player-controls audio {
+  flex: 1;
+  min-width: 220px;
+  height: 40px;
+  outline: none;
+  border-radius: 8px;
+}
+.audio-speed-btn {
+  background: var(--card);
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  padding: 5px 9px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.audio-speed-btn:hover, .audio-speed-btn.active {
+  background: var(--mustard);
+  transform: translateY(-1px);
+}
+.transcript-toggle-btn {
+  background: var(--card);
+  border: 1.5px dashed var(--ink);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: var(--display);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.transcript-toggle-btn:hover {
+  background: var(--mustard-soft);
+  color: var(--ink);
+  border-style: solid;
+}
+.transcript-collapsible {
+  display: none;
+  margin-top: 12px;
+  border-top: 1px dashed rgba(36,34,31,0.2);
+  padding-top: 10px;
+}
+.transcript-collapsible.show {
+  display: block;
+}
+
 /* ================= Web Speech Audio Player ================= */
 .audio-player-bar {
   display: flex;
@@ -1934,7 +2027,6 @@ textarea.outline-input {
   font-size: 10px;
   color: var(--ink-soft);
 }
-
 
 /* ================= Print Styles ================= */
 @media print {

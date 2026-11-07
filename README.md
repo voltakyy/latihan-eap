@@ -44,13 +44,14 @@ Aplikasi ini membagi seluruh materi kuliah ke dalam halaman dan modul mandiri ya
 
 ## 🌟 Modul & Halaman Interaktif
 
-### 1. 🎧 Listening Arena (Pertemuan 1 & 2)
-Memuat ringkasan strategi mendengarkan akademik dan 5 paket latihan audio otentik dosen:
-- **Set 1:** *Nathan's School (Brooklyn Free School)* — 7 butir soal pilihan ganda tentang kurikulum tanpa ujian, aturan kehadiran, dan biaya sekolah.
-- **Set 2:** *Miley Cyrus Biography* — 10 butir soal riwayat karier, peran Hannah Montana, pendapatan awal, dan prestasi Billboard.
-- **Set 3:** *Roger Brown Youth Council* — 5 butir soal formulir identitas, alamat tempat tinggal (Buckworth Street), pekerjaan sampingan, dan komite disabilitas.
-- **Set 4:** *Community Festival Events* — Latihan mencatat waktu kegiatan, pameran seni, dan lokasi tenda.
-- **Set 5:** *Computing & Informatics Conference* — Latihan mencatat registrasi *early-bird*, sesi *keynote*, dan lokakarya keamanan siber.
+### 1. 🎧 Listening Arena (Pertemuan 1 & 2 - Total 42 Soal Otentik)
+Memuat ringkasan strategi mendengarkan akademik dan 5 paket latihan audio otentik dosen yang dilengkapi **Audio Player Interaktif Beraksen British (UK RP)** dengan fitur kontrol kecepatan (0.8x, 1.0x, 1.2x) serta toggle transkrip tersembunyi:
+- **Set 1:** *Nathan's School (Brooklyn Free School)* — 7 butir soal pilihan ganda dialog Host & Nathan (Aksen British, sumber *Oxford Solutions*).
+- **Set 2:** *Miley Cyrus Biography* — 10 butir soal riwayat karier dan prestasi Billboard (Narasi British yang jernih).
+- **Set 3:** *Roger Brown Youth Council* — 5 butir soal formulir identitas, pekerjaan, dan komite disabilitas (Dialog Otentik *Cambridge IELTS 11 Test 2 Section 1* lengkap dengan link rekaman asli).
+- **Set 4:** *Stretton Community Festival Events* — 10 butir soal tabel dan catatan acara festival, pameran seni Bythwaite Hall, dan drama (*Cambridge IELTS 11 Test 4 Section 1*).
+- **Set 5:** *Future Directions in Computing Conference* — 10 butir soal pendaftaran konferensi ilmu komputer, biaya registrasi, dan rute transportasi (*Cambridge IELTS 6 Test 4 Section 1*).
+- **Simulasi UTS Tambahan:** 5 butir skenario audio akademik beraksen British untuk kuliah algoritma, konsultasi KRS, pengumuman seminar AI, diskusi jurnal cloud security, dan briefing ujian.
 
 ### 2. ⚡ Structure & Grammar (Pertemuan 3 & 4)
 Bedah tuntas komponen tata bahasa akademik:
@@ -70,7 +71,11 @@ Bedah tuntas komponen tata bahasa akademik:
   - *Aturan koma:*
     - Dependent Clause di awal: `[Subordinator + Klausa], [Klausa Utama].` (Pakai koma).
     - Dependent Clause di akhir: `[Klausa Utama] [Subordinator + Klausa].` (Tanpa koma).
-- **Latihan Drill Pilihan Ganda & Analisis Pola Kalimat:** Uji pemahaman klasifikasi Simple, Compound, Complex, dan Compound-Complex secara interaktif.
+- **Latihan Drill Pilihan Ganda & Analisis Pola Kalimat (Total 60 Soal Otentik):**
+  - **Drill 1:** *Parts of Speech Mastery — 8 Classes* (40 butir soal lengkap dari bank soal resmi dosen *exercise of PART OF SPEECH* Bagian A: Noun, Pronoun, Verb, Adjective, Adverb, Preposition, Conjunction, dan Interjection masing-masing 5 butir soal).
+  - **Drill 2:** *Parts of Speech in Academic Sentences* (10 butir soal dari bank soal resmi dosen *exercise of PART OF SPEECH* Bagian B: identifikasi dan analisis kelas kata kontekstual pada kalimat majemuk akademik).
+  - **Drill 3:** *Simple, Compound, & Complex Sentences* (10 butir soal klasifikasi jenis kalimat otentik dari slide kuliah resmi dosen Meeting 4).
+  - *Fitur Unggulan:* Setiap butir soal dilengkapi badge penanda kategori kelas kata, kunci jawaban presisi 100%, serta pembahasan mendalam (*explanations*) kaidah gramatika yang mudah dipahami.
 
 ### 3. 📖 Reading Comprehension (Pertemuan 5 & 6)
 Memuat **30 soal otentik** dari bank latihan resmi dosen (*READING Drilling ANS - Word*) yang mencakup 8 naskah bacaan:
