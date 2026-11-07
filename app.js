@@ -1810,8 +1810,25 @@ function formatAudioTime(totalSeconds) {
   return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
 }
 
+const AUDIO_FILE_MAP = {
+  // Listening Arena (100% Berkas MP3 Otentik Dosen & Google Drive)
+  'lis-nathan': { src: 'audio/nathans_school.mp3', duration: 84, label: 'MP3 Latihan Dosen' },
+  'lis-miley': { src: 'audio/miley_cyrus_bio.mp3', duration: 156, label: 'MP3 Google Drive Resmi' },
+  'lis-council': { src: 'audio/youth_council.mp3', duration: 148, label: 'MP3 Cambridge IELTS 11' },
+  'lis-festival': { src: 'audio/community_festival.mp3', duration: 115, label: 'MP3 Cambridge IELTS 11' },
+  'lis-conference': { src: 'audio/future_directions_computing.mp3', duration: 338, label: 'MP3 Google Drive Resmi' },
+
+  // Simulasi UTS (CLO 1 Listening Comprehension)
+  'uts-l1': { src: 'audio/uts_l1.mp3', duration: 30, label: 'MP3 Naskah Dosen' },
+  'uts-l2': { src: 'audio/uts_l2.mp3', duration: 42, label: 'MP3 Naskah Dosen' },
+  'uts-l3': { src: 'audio/uts_l3.mp3', duration: 30, label: 'MP3 Naskah Dosen' },
+  'uts-l4': { src: 'audio/uts_l4.mp3', duration: 42, label: 'MP3 Naskah Dosen' },
+  'uts-l5': { src: 'audio/uts_l5.mp3', duration: 36, label: 'MP3 Naskah Dosen' }
+};
+
 const UnifiedAudioEngine = {
   currentId: null,
+  currentMode: 'idle', // 'media' | 'speech' | 'idle'
   status: 'idle', // 'idle' | 'loading' | 'playing' | 'paused'
   currentTime: 0,
   duration: 0,
@@ -1820,6 +1837,46 @@ const UnifiedAudioEngine = {
   timer: null,
   keepAliveTimer: null,
   activeUtterance: null,
+  mediaAudio: null,
+
+  initMediaAudio() {
+    if (!this.mediaAudio && typeof Audio !== 'undefined') {
+      try {
+        this.mediaAudio = new Audio();
+        this.mediaAudio.preload = 'metadata';
+
+        this.mediaAudio.addEventListener('timeupdate', () => {
+          if (this.currentMode === 'media' && (this.status === 'playing' || this.status === 'paused')) {
+            this.currentTime = this.mediaAudio.currentTime;
+            if (this.mediaAudio.duration && !isNaN(this.mediaAudio.duration)) {
+              this.duration = this.mediaAudio.duration;
+            }
+            this.updateUI(this.currentId);
+          }
+        });
+
+        this.mediaAudio.addEventListener('loadedmetadata', () => {
+          if (this.mediaAudio.duration && !isNaN(this.mediaAudio.duration)) {
+            this.duration = this.mediaAudio.duration;
+            this.updateUI(this.currentId);
+          }
+        });
+
+        this.mediaAudio.addEventListener('ended', () => {
+          this.stop(this.currentId);
+        });
+
+        this.mediaAudio.addEventListener('error', (e) => {
+          console.warn('Audio media error, falling back to speech synthesis', e);
+          if (this.currentId && this.status === 'playing') {
+            this.playSpeechSynthesis(this.currentId, this.currentTime);
+          }
+        });
+      } catch (err) {
+        console.warn('HTML5 Audio init failed:', err);
+      }
+    }
+  },
 
   register(id, text) {
     this.textRegistry[id] = prepareSpeechText(text);
@@ -1827,6 +1884,9 @@ const UnifiedAudioEngine = {
   },
 
   getDuration(id) {
+    if (AUDIO_FILE_MAP[id] && AUDIO_FILE_MAP[id].duration) {
+      return AUDIO_FILE_MAP[id].duration;
+    }
     const text = this.textRegistry[id] || '';
     const rate = this.rateRegistry[id] || 1.0;
     return calculateAudioDuration(text, rate);
@@ -1839,13 +1899,18 @@ const UnifiedAudioEngine = {
     const timeTot = document.getElementById(`time-tot-${id}`);
     if (timeTot) timeTot.textContent = formatAudioTime(dur);
 
-    if (this.currentId === id && (this.status === 'playing' || this.status === 'paused')) {
-      const cur = this.currentTime;
-      this.play(id, cur);
+    if (this.currentId === id) {
+      if (this.currentMode === 'media' && this.mediaAudio) {
+        this.mediaAudio.playbackRate = rate;
+      } else if (this.status === 'playing' || this.status === 'paused') {
+        const cur = this.currentTime;
+        this.play(id, cur);
+      }
     }
   },
 
   updateUI(id) {
+    if (!id) return;
     const btn = document.getElementById(`btn-audio-${id}`);
     const statusEl = document.getElementById(`status-${id}`);
     const timeCur = document.getElementById(`time-cur-${id}`);
@@ -1896,11 +1961,6 @@ const UnifiedAudioEngine = {
   },
 
   toggle(id) {
-    if (!('speechSynthesis' in window)) {
-      alert('Browser Anda tidak mendukung Web Speech API. Silakan gunakan Chrome, Edge, atau Safari.');
-      return;
-    }
-
     if (this.currentId === id && this.status === 'playing') {
       this.pause();
     } else if (this.currentId === id && this.status === 'paused') {
@@ -1916,10 +1976,86 @@ const UnifiedAudioEngine = {
     }
 
     this.currentId = id;
-    this.status = 'loading';
     this.duration = this.getDuration(id);
     this.currentTime = fromSeconds;
+    this.status = 'loading';
     this.updateUI(id);
+
+    const fileInfo = AUDIO_FILE_MAP[id];
+    if (fileInfo && fileInfo.src && typeof Audio !== 'undefined') {
+      this.playMediaAudio(id, fileInfo.src, fromSeconds);
+    } else {
+      this.playSpeechSynthesis(id, fromSeconds);
+    }
+  },
+
+  playMediaAudio(id, src, fromSeconds = 0) {
+    this.initMediaAudio();
+    this.currentMode = 'media';
+
+    if (!this.mediaAudio) {
+      this.playSpeechSynthesis(id, fromSeconds);
+      return;
+    }
+
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+
+    const currentSrc = this.mediaAudio.src || '';
+    if (!currentSrc.includes(src)) {
+      this.mediaAudio.src = src;
+      this.mediaAudio.load();
+    }
+
+    this.mediaAudio.playbackRate = this.rateRegistry[id] || 1.0;
+
+    const startPlay = () => {
+      if (fromSeconds > 0) {
+        try { this.mediaAudio.currentTime = fromSeconds; } catch (err) {}
+      }
+      const playPromise = this.mediaAudio.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            this.status = 'playing';
+            this.updateUI(id);
+          })
+          .catch((err) => {
+            console.warn('Audio play() failed, trying speech fallback:', err);
+            this.playSpeechSynthesis(id, fromSeconds);
+          });
+      }
+    };
+
+    if (this.mediaAudio.readyState >= 1) {
+      startPlay();
+    } else {
+      const onCanPlay = () => {
+        this.mediaAudio.removeEventListener('canplay', onCanPlay);
+        startPlay();
+      };
+      this.mediaAudio.addEventListener('canplay', onCanPlay);
+      setTimeout(() => {
+        if (this.status === 'loading' && this.currentId === id) {
+          startPlay();
+        }
+      }, 300);
+    }
+  },
+
+  playSpeechSynthesis(id, fromSeconds = 0) {
+    this.currentMode = 'speech';
+    if (this.mediaAudio) {
+      try { this.mediaAudio.pause(); } catch (e) {}
+    }
+
+    if (!('speechSynthesis' in window)) {
+      alert('Browser Anda tidak mendukung Web Speech API atau pemutar audio.');
+      this.status = 'idle';
+      this.updateUI(id);
+      return;
+    }
 
     const fullText = this.textRegistry[id] || '';
     const rate = this.rateRegistry[id] || 1.0;
@@ -1974,36 +2110,61 @@ const UnifiedAudioEngine = {
   pause() {
     if (this.status !== 'playing' || !this.currentId) return;
     this.status = 'paused';
-    this.stopTimer();
-    this.stopKeepAlive();
-    window.speechSynthesis.pause();
+
+    if (this.currentMode === 'media' && this.mediaAudio) {
+      try { this.mediaAudio.pause(); } catch (e) {}
+    } else {
+      this.stopTimer();
+      this.stopKeepAlive();
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.pause();
+      }
+    }
     this.updateUI(this.currentId);
   },
 
   resume() {
     if (this.status !== 'paused' || !this.currentId) return;
     this.status = 'playing';
-    
-    window.speechSynthesis.resume();
-    this.startTimer();
-    this.startKeepAlive();
-    this.updateUI(this.currentId);
 
-    setTimeout(() => {
-      if (!window.speechSynthesis.speaking && this.status === 'playing') {
-        this.play(this.currentId, this.currentTime);
+    if (this.currentMode === 'media' && this.mediaAudio) {
+      const playPromise = this.mediaAudio.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => this.updateUI(this.currentId))
+          .catch(() => this.updateUI(this.currentId));
       }
-    }, 150);
+    } else {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.resume();
+        this.startTimer();
+        this.startKeepAlive();
+        this.updateUI(this.currentId);
+
+        setTimeout(() => {
+          if (!window.speechSynthesis.speaking && this.status === 'playing') {
+            this.playSpeechSynthesis(this.currentId, this.currentTime);
+          }
+        }, 150);
+      }
+    }
   },
 
   stop(targetId = null) {
     const id = targetId || this.currentId;
+    if (this.mediaAudio) {
+      try {
+        this.mediaAudio.pause();
+        this.mediaAudio.currentTime = 0;
+      } catch (e) {}
+    }
     this.stopTimer();
     this.stopKeepAlive();
-    if ('speechSynthesis' in window) {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       window.speechSynthesis.cancel();
     }
     this.status = 'idle';
+    this.currentMode = 'idle';
     this.currentTime = 0;
     this.activeUtterance = null;
     if (id) {
@@ -2025,10 +2186,14 @@ const UnifiedAudioEngine = {
 
     this.currentTime = newSeconds;
     this.duration = dur;
-    this.updateUI(id);
 
-    if (this.status === 'playing' || this.status === 'paused') {
+    if (this.currentMode === 'media' && this.mediaAudio && this.currentId === id) {
+      try { this.mediaAudio.currentTime = newSeconds; } catch (err) {}
+      this.updateUI(id);
+    } else if (this.status === 'playing' || this.status === 'paused') {
       this.play(id, newSeconds);
+    } else {
+      this.updateUI(id);
     }
   },
 
@@ -2080,6 +2245,9 @@ function createAudioPlayerHTML(id, rawText) {
   UnifiedAudioEngine.register(id, rawText);
   const dur = UnifiedAudioEngine.getDuration(id);
   const formattedDur = formatAudioTime(dur);
+  const fileMeta = AUDIO_FILE_MAP[id];
+  const badgeHtml = fileMeta ? `<span class="audio-source-badge" title="Audio MP3 resmi ${fileMeta.label}">🎙️ ${fileMeta.label}</span>` : '';
+
   return `
     <div class="audio-player-unit" id="audio-unit-${id}">
       <div class="audio-controls-row">
@@ -2098,6 +2266,7 @@ function createAudioPlayerHTML(id, rawText) {
               <option value="1.15">1.15x (Cepat)</option>
             </select>
           </div>
+          ${badgeHtml}
         </div>
         <span class="audio-status-pill" id="status-${id}">● Siap Diputar</span>
       </div>
