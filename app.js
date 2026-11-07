@@ -1,6 +1,6 @@
 /**
- * Ruang EAP — Application Logic & Question Engine
- * Universitas Muhammadiyah Surakarta — Teknik Informatika
+ * Ruang EAP : Application Logic & Question Engine
+ * Universitas Muhammadiyah Surakarta, Teknik Informatika
  * 
  * Terintegrasi penuh dengan seluruh materi resmi:
  * 1. Listening Arena (Meeting 1 & 2: Nathan's School, Miley Cyrus, Youth Council, Festival, Computing Conference)
@@ -1312,7 +1312,7 @@ const UTS_EXAM_DATA = {
       id: 'uts-l1',
       pts: 5,
       clo: 'CLO 1',
-      audioSim: `[ACADEMIC LECTURE EXCERPT — COMPUTER SCIENCE]
+      audioSim: `[ACADEMIC LECTURE EXCERPT: COMPUTER SCIENCE]
 Professor: "Good morning class. Today we are initiating our unit on algorithmic optimization. Now, many novice programmers assume optimization simply means shortening lines of code. However, our primary objective this morning is to demonstrate how data structures directly dictate memory allocation and execution time, especially in high-throughput database systems. Therefore, please observe this benchmark graph..."`,
       q: "1. What is the primary purpose of the professor's lecture?",
       options: [
@@ -1328,7 +1328,7 @@ Professor: "Good morning class. Today we are initiating our unit on algorithmic 
       id: 'uts-l2',
       pts: 5,
       clo: 'CLO 1',
-      audioSim: `[CAMPUS CONSULTATION — STUDENT & ACADEMIC ADVISOR]
+      audioSim: `[CAMPUS CONSULTATION: STUDENT & ACADEMIC ADVISOR]
 Advisor: "Come in, Dimas. I received your email regarding course prerequisites. You mentioned wanting to take Advanced Software Engineering next semester. However, the departmental catalog strictly requires that you must have completed Object-Oriented Programming with a minimum grade of B before enrolling."
 Dimas: "I see. I took OOP last semester and received an A-, but my grade sheet hasn't updated on the online portal yet."
 Advisor: "In that case, bring a signed verification slip from your instructor to the department office by this Thursday at 3 PM, and we will manually unlock the enrollment system for you."`,
@@ -1346,7 +1346,7 @@ Advisor: "In that case, bring a signed verification slip from your instructor to
       id: 'uts-l3',
       pts: 5,
       clo: 'CLO 1',
-      audioSim: `[SEMINAR ANNOUNCEMENT — FACULTY OF INFORMATICS]
+      audioSim: `[SEMINAR ANNOUNCEMENT: FACULTY OF INFORMATICS]
 Host: "Attention all attendees. Before Dr. Hartono delivers the keynote on Artificial Intelligence ethics, please take note of our workshop schedule. The interactive lab breakout session will take place in Multimedia Lab 3 on the second floor, not the auditorium as printed in the flyer. Furthermore, all participants requiring a certificate of participation must scan the QR code located near the exit doors prior to 4:30 PM."`,
       q: '3. What specific detail did the host correct regarding the workshop schedule?',
       options: [
@@ -1362,7 +1362,7 @@ Host: "Attention all attendees. Before Dr. Hartono delivers the keynote on Artif
       id: 'uts-l4',
       pts: 5,
       clo: 'CLO 1',
-      audioSim: `[STUDY GROUP DISCUSSION — UNIVERSITY LIBRARY]
+      audioSim: `[STUDY GROUP DISCUSSION: UNIVERSITY LIBRARY]
 Aisha: "So for our research outline on cloud storage security, we already have our topic sentence and two supporting arguments regarding data encryption and redundancy. What we're lacking is empirical statistical evidence to support our second claim."
 Budi: "Actually, I found a 2025 survey from the IEEE Computer Society showing that 73% of cloud breaches were due to misconfigured access credentials rather than faulty cryptographic algorithms."
 Aisha: "That is perfect! That precisely reinforces our argument that human administrative protocol is the critical vulnerability."`,
@@ -1380,7 +1380,7 @@ Aisha: "That is perfect! That precisely reinforces our argument that human admin
       id: 'uts-l5',
       pts: 5,
       clo: 'CLO 1',
-      audioSim: `[CAMPUS BRIEFING — UTS EXAM PREPARATION]
+      audioSim: `[CAMPUS BRIEFING: UTS EXAM PREPARATION]
 Proctor: "Welcome students. Please listen attentively to the examination guidelines. To answer the multiple-choice questions on your LJK sheet, a 2B pencil is mandatory; pens cannot be scanned by the optical grader. However, for Section 4, the paragraph outline writing task, you must use a black or blue pen. You are strictly prohibited from bringing cell phones or smartwatches to your desk. Arrive at least 30 minutes early, as any student arriving even one second late will face immediate disqualification."`,
       q: '5. What is the mandatory rule regarding the Writing section of the exam?',
       options: [
@@ -2250,7 +2250,7 @@ window.handleListeningAnswer = function(drillId, questionId, selectedIdx) {
       ? '<div class="expl-status-banner banner-success">🎉 <strong>Jawaban Anda Benar!</strong> Pilihan Anda tepat sesuai transkrip percakapan audio resmi dosen.</div>'
       : '<div class="expl-status-banner banner-danger">❌ <strong>Jawaban Belum Tepat.</strong> Opsi yang Anda pilih kurang akurat. Pelajari rujukan materi dan bukti transkrip di bawah:</div>';
 
-    const rpsModuleHtml = '<div class="expl-meta-ref">📚 Materi Perkuliahan RPS: Pertemuan 1 & 2 (Listening Comprehension — Extracting Specific Details & Note Taking)</div>';
+    const rpsModuleHtml = '<div class="expl-meta-ref">📚 Materi Perkuliahan RPS: Pertemuan 1 & 2 (Listening Comprehension : Extracting Specific Details & Note Taking)</div>';
 
     expl.innerHTML = `
       ${statusHtml}
@@ -2489,7 +2489,7 @@ window.handleDrillAnswer = function(passageId, questionId, selectedIdx) {
       ? '<div class="expl-status-banner banner-success">🎉 <strong>Jawaban Anda Benar!</strong> Pilihan Anda tepat sesuai kunci hijau resmi naskah dosen.</div>'
       : '<div class="expl-status-banner banner-danger">❌ <strong>Jawaban Belum Tepat.</strong> Anda memilih opsi yang keliru. Silakan pelajari rujukan materi dosen dan kalimat bukti di bawah:</div>';
 
-    const rpsModuleHtml = '<div class="expl-meta-ref">📚 Materi Perkuliahan: Pertemuan 5 & 6 (Reading Comprehension — Main Ideas, Detail Scanning & Text Evidence)</div>';
+    const rpsModuleHtml = '<div class="expl-meta-ref">📚 Materi Perkuliahan: Pertemuan 5 & 6 (Reading Comprehension : Main Ideas, Detail Scanning & Text Evidence)</div>';
 
     explCard.innerHTML = `
       ${statusHtml}

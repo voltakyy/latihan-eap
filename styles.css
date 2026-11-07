@@ -1,6 +1,6 @@
 /* =========================================================
-   Ruang EAP — English for Academic Purposes (UTS Persiapan)
-   Prodi Teknik Informatika — Universitas Muhammadiyah Surakarta
+   Ruang EAP : English for Academic Purposes (UTS Persiapan)
+   Prodi Teknik Informatika, Universitas Muhammadiyah Surakarta
    Sistem Desain: Studio Paper Neo-Brutalist
    ========================================================= */
 
@@ -582,7 +582,9 @@ tr:nth-child(even) td {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 10px 14px;
+  padding: 11px 14px;
+  min-height: 44px;
+  cursor: pointer;
   background: var(--paper);
   border: 2px solid var(--ink);
   border-radius: 10px;
@@ -1101,8 +1103,9 @@ textarea.outline-input {
     font-size: 22px;
   }
   .tab-btn {
-    padding: 8px 12px;
+    padding: 10px 14px;
     font-size: 13px;
+    min-height: 44px;
   }
 }
 
@@ -1402,10 +1405,12 @@ textarea.outline-input {
 .audio-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  padding: 6px 12px;
+  padding: 8px 14px;
+  min-height: 40px;
   font-family: var(--display);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 700;
   border: 2px solid var(--ink);
   border-radius: 8px;
@@ -1585,6 +1590,16 @@ span.audio-spinner {
   position: relative;
   cursor: pointer;
   touch-action: none;
+}
+
+.audio-timeline-track::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  bottom: -16px;
+  left: 0;
+  right: 0;
+  cursor: pointer;
 }
 
 .audio-timeline-track:hover {
