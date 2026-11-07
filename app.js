@@ -1839,21 +1839,34 @@ window.toggleListeningAudio = function(drillId, rawTranscript) {
     return;
   }
 
-  // If already playing this drill, stop it
+  // If already playing this drill, user clicked "⏹ Berhenti" -> stop it
   if (currentPlayingId === drillId && window.speechSynthesis.speaking) {
     window.stopPassageAudio();
     return;
   }
 
-  window.stopPassageAudio();
+  // 1. Stop any currently active speech synthesis FIRST
+  stopSpeechKeepAlive();
+  window.speechSynthesis.cancel();
 
-  // Instant visual feedback: Loading Spinner
+  // Reset any previous playing drill or passage button UI
+  if (currentPlayingId && currentPlayingId !== drillId) {
+    resetAudioUI(currentPlayingId);
+    const prevPassageBtn = document.getElementById(`btn-audio-${currentPlayingId}`);
+    if (prevPassageBtn) {
+      prevPassageBtn.innerHTML = '▶ Putar Audio';
+      prevPassageBtn.classList.remove('is-flagged', 'loading');
+    }
+  }
+  currentPlayingId = drillId;
+
+  // 2. Instant visual feedback: Visible Animated Loading Spinner
   if (btn) {
-    btn.innerHTML = '<span class="audio-spinner"></span> Menyiapkan Audio...';
+    btn.innerHTML = '<svg class="audio-spinner-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="rgba(36,34,31,0.2)"></circle><path d="M12 3a9 9 0 0 1 9 9" stroke="#24221f"></path></svg> Menyiapkan Audio...';
     btn.className = 'audio-btn audio-btn-play loading';
   }
   if (statusEl) {
-    statusEl.innerHTML = '<span class="audio-spinner"></span> Memuat...';
+    statusEl.innerHTML = '<svg class="audio-spinner-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="rgba(36,34,31,0.2)"></circle><path d="M12 3a9 9 0 0 1 9 9" stroke="#7a4f01"></path></svg> Memuat...';
     statusEl.className = 'audio-status-pill loading';
   }
 
@@ -1881,16 +1894,31 @@ window.toggleListeningAudio = function(drillId, rawTranscript) {
     }
   };
 
-  utterance.onend = utterance.onerror = function() {
+  utterance.onend = function() {
     stopSpeechKeepAlive();
     resetAudioUI(drillId);
+    currentPlayingId = null;
+    activeSpeechUtterance = null;
+  };
+
+  utterance.onerror = function(event) {
+    // If canceled or interrupted by another user action, do not treat as error
+    if (event && (event.error === 'canceled' || event.error === 'interrupted')) {
+      return;
+    }
+    console.warn('SpeechSynthesis error:', event);
+    stopSpeechKeepAlive();
+    resetAudioUI(drillId);
+    currentPlayingId = null;
+    activeSpeechUtterance = null;
   };
 
   activeSpeechUtterance = utterance;
 
   // Unpause in case Chromium speech was suspended
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.resume();
+  if (window.speechSynthesis.paused) {
+    window.speechSynthesis.resume();
+  }
   window.speechSynthesis.speak(utterance);
 };
 
@@ -1900,11 +1928,30 @@ window.playPassageAudio = function(qId, rawText) {
     return;
   }
 
-  window.stopPassageAudio();
+  // If already playing this question's audio, stop it
+  if (currentPlayingId === qId && window.speechSynthesis.speaking) {
+    window.stopPassageAudio();
+    return;
+  }
+
+  // 1. Cancel previous speech FIRST
+  stopSpeechKeepAlive();
+  window.speechSynthesis.cancel();
+
+  // Reset previous drill or passage audio if any
+  if (currentPlayingId && currentPlayingId !== qId) {
+    resetAudioUI(currentPlayingId);
+    const prevBtn = document.getElementById(`btn-audio-${currentPlayingId}`);
+    if (prevBtn) {
+      prevBtn.innerHTML = '▶ Putar Audio';
+      prevBtn.classList.remove('is-flagged', 'loading');
+    }
+  }
+  currentPlayingId = qId;
 
   const btn = document.getElementById(`btn-audio-${qId}`);
   if (btn) {
-    btn.innerHTML = '<span class="audio-spinner"></span> Memuat...';
+    btn.innerHTML = '<svg class="audio-spinner-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="rgba(36,34,31,0.2)"></circle><path d="M12 3a9 9 0 0 1 9 9" stroke="#24221f"></path></svg> Memuat...';
     btn.classList.add('loading');
   }
 
@@ -1927,21 +1974,35 @@ window.playPassageAudio = function(qId, rawText) {
     }
   };
 
-  utterance.onend = utterance.onerror = function() {
+  utterance.onend = function() {
     stopSpeechKeepAlive();
     if (btn) {
       btn.innerHTML = '▶ Putar Audio';
-      btn.classList.remove('is-flagged');
-      btn.classList.remove('loading');
+      btn.classList.remove('is-flagged', 'loading');
     }
     currentPlayingId = null;
+    activeSpeechUtterance = null;
   };
 
-  currentPlayingId = qId;
+  utterance.onerror = function(event) {
+    if (event && (event.error === 'canceled' || event.error === 'interrupted')) {
+      return;
+    }
+    console.warn('SpeechSynthesis error:', event);
+    stopSpeechKeepAlive();
+    if (btn) {
+      btn.innerHTML = '▶ Putar Audio';
+      btn.classList.remove('is-flagged', 'loading');
+    }
+    currentPlayingId = null;
+    activeSpeechUtterance = null;
+  };
+
   activeSpeechUtterance = utterance;
 
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.resume();
+  if (window.speechSynthesis.paused) {
+    window.speechSynthesis.resume();
+  }
   window.speechSynthesis.speak(utterance);
 };
 
