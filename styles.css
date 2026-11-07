@@ -1526,6 +1526,210 @@ span.audio-spinner {
   animation: pulse-audio 1.5s infinite;
 }
 
+.audio-status-pill.paused {
+  background: var(--mustard-soft) !important;
+  color: #7a4f01 !important;
+  border-color: var(--ink) !important;
+}
+
+/* ================= Universal Neo-Brutalist Audio Player Bar ================= */
+.audio-player-unit {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 10px 0 14px;
+  box-shadow: 2px 2px 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.audio-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.audio-controls-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.audio-timeline-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.audio-time-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink);
+  min-width: 34px;
+  user-select: none;
+}
+
+.audio-timeline-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(36, 34, 31, 0.12);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.audio-timeline-track:hover {
+  background: rgba(36, 34, 31, 0.22);
+}
+
+.audio-timeline-fill {
+  height: 100%;
+  background: var(--teal);
+  border-radius: 999px;
+  width: 0%;
+  pointer-events: none;
+  transition: width 0.1s linear;
+}
+
+.audio-timeline-thumb {
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  box-shadow: 1px 1px 0 var(--ink);
+  transition: left 0.1s linear;
+}
+
+.audio-btn-pause {
+  background: var(--mustard) !important;
+  color: var(--ink) !important;
+}
+
+.audio-btn-resume {
+  background: var(--teal) !important;
+  color: #fff !important;
+}
+
+.opt-btn.selected {
+  background: var(--mustard-soft) !important;
+  border-color: var(--ink) !important;
+  font-weight: 700;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+/* ================= Quick Action Hub & Subnav Cross Hints ================= */
+.hero-quick-access {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin: 16px 0 20px;
+}
+
+.quick-nav-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--paper);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 var(--ink);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.quick-nav-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+  background: var(--paper-deep);
+}
+
+.quick-nav-card:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.quick-icon {
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.quick-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.quick-info strong {
+  font-family: var(--display);
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.quick-info span {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.quick-arrow {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--mustard);
+  padding: 4px 8px;
+  border: 1.5px solid var(--ink);
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.exam-subnav-hint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--blue-soft);
+  border: 1.5px solid var(--blue);
+  border-radius: 8px;
+  font-size: 12.5px;
+  margin-bottom: 12px;
+}
+
+.link-btn-inline {
+  background: none;
+  border: none;
+  color: #1e556e;
+  font-weight: 800;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: 12.5px;
+  font-family: inherit;
+}
+
+.link-btn-inline:hover {
+  color: var(--ink);
+}
+
 @keyframes pulse-audio {
   0% { opacity: 1; }
   50% { opacity: 0.6; }

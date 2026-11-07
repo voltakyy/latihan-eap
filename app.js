@@ -1788,38 +1788,7 @@ function initAccordions() {
   });
 }
 
-// ================= Web Speech Listening Audio Engine =================
-let activeSpeechUtterance = null;
-let currentPlayingId = null;
-let speechKeepAliveTimer = null;
-
-// Pre-warm Web Speech voices in background
-if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-  window.speechSynthesis.onvoiceschanged = () => {
-    window.speechSynthesis.getVoices();
-  };
-  window.speechSynthesis.getVoices();
-}
-
-function startSpeechKeepAlive() {
-  stopSpeechKeepAlive();
-  speechKeepAliveTimer = setInterval(() => {
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis.speaking) {
-      window.speechSynthesis.pause();
-      window.speechSynthesis.resume();
-    } else {
-      stopSpeechKeepAlive();
-    }
-  }, 9000);
-}
-
-function stopSpeechKeepAlive() {
-  if (speechKeepAliveTimer) {
-    clearInterval(speechKeepAliveTimer);
-    speechKeepAliveTimer = null;
-  }
-}
-
+// ================= Universal Web Speech Audio Player Engine =================
 function prepareSpeechText(raw) {
   if (!raw) return '';
   return raw
@@ -1829,221 +1798,336 @@ function prepareSpeechText(raw) {
     .trim();
 }
 
-window.toggleListeningAudio = function(drillId, rawTranscript) {
-  const btn = document.getElementById(`btn-audio-${drillId}`);
-  const statusEl = document.getElementById(`status-${drillId}`);
-  const speedSelect = document.getElementById(`speed-${drillId}`);
-
-  if (!('speechSynthesis' in window)) {
-    alert('Browser Anda tidak mendukung Web Speech API. Silakan gunakan Chrome, Edge, atau Safari.');
-    return;
-  }
-
-  // If already playing this drill, user clicked "⏹ Berhenti" -> stop it
-  if (currentPlayingId === drillId && window.speechSynthesis.speaking) {
-    window.stopPassageAudio();
-    return;
-  }
-
-  // 1. Stop any currently active speech synthesis FIRST
-  stopSpeechKeepAlive();
-  window.speechSynthesis.cancel();
-
-  // Reset any previous playing drill or passage button UI
-  if (currentPlayingId && currentPlayingId !== drillId) {
-    resetAudioUI(currentPlayingId);
-    const prevPassageBtn = document.getElementById(`btn-audio-${currentPlayingId}`);
-    if (prevPassageBtn) {
-      prevPassageBtn.innerHTML = '▶ Putar Audio';
-      prevPassageBtn.classList.remove('is-flagged', 'loading');
-    }
-  }
-  currentPlayingId = drillId;
-
-  // 2. Instant visual feedback: Visible Animated Loading Spinner
-  if (btn) {
-    btn.innerHTML = '<svg class="audio-spinner-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="rgba(36,34,31,0.2)"></circle><path d="M12 3a9 9 0 0 1 9 9" stroke="#24221f"></path></svg> Menyiapkan Audio...';
-    btn.className = 'audio-btn audio-btn-play loading';
-  }
-  if (statusEl) {
-    statusEl.innerHTML = '<svg class="audio-spinner-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="rgba(36,34,31,0.2)"></circle><path d="M12 3a9 9 0 0 1 9 9" stroke="#7a4f01"></path></svg> Memuat...';
-    statusEl.className = 'audio-status-pill loading';
-  }
-
-  const textToSpeak = prepareSpeechText(rawTranscript);
-  const rate = speedSelect ? parseFloat(speedSelect.value) || 1.0 : 1.0;
-
-  const utterance = new SpeechSynthesisUtterance(textToSpeak);
-  utterance.lang = 'en-US';
-  utterance.rate = rate;
-
-  const voices = window.speechSynthesis.getVoices();
-  const enVoice = voices.find(v => v.lang && v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Microsoft') || v.name.includes('English')));
-  if (enVoice) utterance.voice = enVoice;
-
-  utterance.onstart = function() {
-    currentPlayingId = drillId;
-    startSpeechKeepAlive();
-    if (btn) {
-      btn.innerHTML = '⏹ Berhenti';
-      btn.className = 'audio-btn audio-btn-play playing';
-    }
-    if (statusEl) {
-      statusEl.textContent = '▶ Sedang Membaca...';
-      statusEl.className = 'audio-status-pill playing';
-    }
-  };
-
-  utterance.onend = function() {
-    stopSpeechKeepAlive();
-    resetAudioUI(drillId);
-    currentPlayingId = null;
-    activeSpeechUtterance = null;
-  };
-
-  utterance.onerror = function(event) {
-    // If canceled or interrupted by another user action, do not treat as error
-    if (event && (event.error === 'canceled' || event.error === 'interrupted')) {
-      return;
-    }
-    console.warn('SpeechSynthesis error:', event);
-    stopSpeechKeepAlive();
-    resetAudioUI(drillId);
-    currentPlayingId = null;
-    activeSpeechUtterance = null;
-  };
-
-  activeSpeechUtterance = utterance;
-
-  // Unpause in case Chromium speech was suspended
-  if (window.speechSynthesis.paused) {
-    window.speechSynthesis.resume();
-  }
-  window.speechSynthesis.speak(utterance);
-};
-
-window.playPassageAudio = function(qId, rawText) {
-  if (!('speechSynthesis' in window)) {
-    alert('Browser Anda tidak mendukung Web Speech API.');
-    return;
-  }
-
-  // If already playing this question's audio, stop it
-  if (currentPlayingId === qId && window.speechSynthesis.speaking) {
-    window.stopPassageAudio();
-    return;
-  }
-
-  // 1. Cancel previous speech FIRST
-  stopSpeechKeepAlive();
-  window.speechSynthesis.cancel();
-
-  // Reset previous drill or passage audio if any
-  if (currentPlayingId && currentPlayingId !== qId) {
-    resetAudioUI(currentPlayingId);
-    const prevBtn = document.getElementById(`btn-audio-${currentPlayingId}`);
-    if (prevBtn) {
-      prevBtn.innerHTML = '▶ Putar Audio';
-      prevBtn.classList.remove('is-flagged', 'loading');
-    }
-  }
-  currentPlayingId = qId;
-
-  const btn = document.getElementById(`btn-audio-${qId}`);
-  if (btn) {
-    btn.innerHTML = '<svg class="audio-spinner-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="rgba(36,34,31,0.2)"></circle><path d="M12 3a9 9 0 0 1 9 9" stroke="#24221f"></path></svg> Memuat...';
-    btn.classList.add('loading');
-  }
-
-  const text = prepareSpeechText(rawText);
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'en-US';
-  utterance.rate = 1.0;
-
-  const voices = window.speechSynthesis.getVoices();
-  const enVoice = voices.find(v => v.lang && v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Microsoft') || v.name.includes('English')));
-  if (enVoice) utterance.voice = enVoice;
-
-  utterance.onstart = function() {
-    currentPlayingId = qId;
-    startSpeechKeepAlive();
-    if (btn) {
-      btn.innerHTML = '⏹ Stop Audio';
-      btn.classList.remove('loading');
-      btn.classList.add('is-flagged');
-    }
-  };
-
-  utterance.onend = function() {
-    stopSpeechKeepAlive();
-    if (btn) {
-      btn.innerHTML = '▶ Putar Audio';
-      btn.classList.remove('is-flagged', 'loading');
-    }
-    currentPlayingId = null;
-    activeSpeechUtterance = null;
-  };
-
-  utterance.onerror = function(event) {
-    if (event && (event.error === 'canceled' || event.error === 'interrupted')) {
-      return;
-    }
-    console.warn('SpeechSynthesis error:', event);
-    stopSpeechKeepAlive();
-    if (btn) {
-      btn.innerHTML = '▶ Putar Audio';
-      btn.classList.remove('is-flagged', 'loading');
-    }
-    currentPlayingId = null;
-    activeSpeechUtterance = null;
-  };
-
-  activeSpeechUtterance = utterance;
-
-  if (window.speechSynthesis.paused) {
-    window.speechSynthesis.resume();
-  }
-  window.speechSynthesis.speak(utterance);
-};
-
-window.stopPassageAudio = function() {
-  stopSpeechKeepAlive();
-  if ('speechSynthesis' in window) {
-    window.speechSynthesis.cancel();
-  }
-  if (currentPlayingId) {
-    resetAudioUI(currentPlayingId);
-    const qBtn = document.getElementById(`btn-audio-${currentPlayingId}`);
-    if (qBtn) {
-      qBtn.innerHTML = '▶ Putar Audio';
-      qBtn.classList.remove('is-flagged');
-      qBtn.classList.remove('loading');
-    }
-  }
-  currentPlayingId = null;
-  activeSpeechUtterance = null;
-};
-
-function resetAudioUI(drillId) {
-  const btn = document.getElementById(`btn-audio-${drillId}`);
-  const statusEl = document.getElementById(`status-${drillId}`);
-  if (btn) {
-    btn.innerHTML = '▶ Putar Audio';
-    btn.className = 'audio-btn audio-btn-play';
-    btn.classList.remove('loading');
-  }
-  if (statusEl) {
-    statusEl.textContent = '● Siap Diputar';
-    statusEl.className = 'audio-status-pill';
-  }
+function calculateAudioDuration(text, rate = 1.0) {
+  if (!text) return 10;
+  const words = text.trim().split(/\s+/).length;
+  return Math.max(5, Math.round((words / 140) * 60 / (rate || 1.0)));
 }
 
-window.changeAudioSpeed = function(drillId) {
-  if (currentPlayingId === drillId && window.speechSynthesis.speaking) {
-    const drill = LISTENING_DRILLS.find(d => d.id === drillId);
-    if (drill) {
-      window.toggleListeningAudio(drillId, drill.transcript);
+function formatAudioTime(totalSeconds) {
+  const m = Math.floor(totalSeconds / 60);
+  const s = Math.floor(totalSeconds % 60);
+  return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+}
+
+const UnifiedAudioEngine = {
+  currentId: null,
+  status: 'idle', // 'idle' | 'loading' | 'playing' | 'paused'
+  currentTime: 0,
+  duration: 0,
+  textRegistry: {},
+  rateRegistry: {},
+  timer: null,
+  keepAliveTimer: null,
+  activeUtterance: null,
+
+  register(id, text) {
+    this.textRegistry[id] = prepareSpeechText(text);
+    if (!this.rateRegistry[id]) this.rateRegistry[id] = 1.0;
+  },
+
+  getDuration(id) {
+    const text = this.textRegistry[id] || '';
+    const rate = this.rateRegistry[id] || 1.0;
+    return calculateAudioDuration(text, rate);
+  },
+
+  changeSpeed(id, speedVal) {
+    const rate = parseFloat(speedVal) || 1.0;
+    this.rateRegistry[id] = rate;
+    const dur = this.getDuration(id);
+    const timeTot = document.getElementById(`time-tot-${id}`);
+    if (timeTot) timeTot.textContent = formatAudioTime(dur);
+
+    if (this.currentId === id && (this.status === 'playing' || this.status === 'paused')) {
+      const cur = this.currentTime;
+      this.play(id, cur);
     }
+  },
+
+  updateUI(id) {
+    const btn = document.getElementById(`btn-audio-${id}`);
+    const statusEl = document.getElementById(`status-${id}`);
+    const timeCur = document.getElementById(`time-cur-${id}`);
+    const timeTot = document.getElementById(`time-tot-${id}`);
+    const fill = document.getElementById(`track-fill-${id}`);
+    const thumb = document.getElementById(`track-thumb-${id}`);
+
+    const dur = (this.currentId === id && this.duration) ? this.duration : this.getDuration(id);
+    const cur = (this.currentId === id) ? this.currentTime : 0;
+    const pct = dur > 0 ? Math.min(100, Math.max(0, (cur / dur) * 100)) : 0;
+
+    if (timeCur) timeCur.textContent = formatAudioTime(cur);
+    if (timeTot) timeTot.textContent = formatAudioTime(dur);
+    if (fill) fill.style.width = pct.toFixed(1) + '%';
+    if (thumb) thumb.style.left = pct.toFixed(1) + '%';
+
+    if (btn) {
+      if (this.currentId === id && this.status === 'loading') {
+        btn.innerHTML = '<svg class="audio-spinner-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="rgba(36,34,31,0.2)"></circle><path d="M12 3a9 9 0 0 1 9 9" stroke="#24221f"></path></svg> Menyiapkan...';
+        btn.className = 'audio-btn audio-btn-play loading';
+      } else if (this.currentId === id && this.status === 'playing') {
+        btn.innerHTML = '⏸ Jeda Audio';
+        btn.className = 'audio-btn audio-btn-play audio-btn-pause';
+      } else if (this.currentId === id && this.status === 'paused') {
+        btn.innerHTML = '▶ Lanjutkan';
+        btn.className = 'audio-btn audio-btn-play audio-btn-resume';
+      } else {
+        btn.innerHTML = '▶ Putar Audio';
+        btn.className = 'audio-btn audio-btn-play';
+      }
+    }
+
+    if (statusEl) {
+      if (this.currentId === id && this.status === 'loading') {
+        statusEl.textContent = 'Memuat...';
+        statusEl.className = 'audio-status-pill loading';
+      } else if (this.currentId === id && this.status === 'playing') {
+        statusEl.textContent = '▶ Sedang Memutar...';
+        statusEl.className = 'audio-status-pill playing';
+      } else if (this.currentId === id && this.status === 'paused') {
+        statusEl.textContent = '⏸ Dijeda';
+        statusEl.className = 'audio-status-pill paused';
+      } else {
+        statusEl.textContent = '● Siap Diputar';
+        statusEl.className = 'audio-status-pill';
+      }
+    }
+  },
+
+  toggle(id) {
+    if (!('speechSynthesis' in window)) {
+      alert('Browser Anda tidak mendukung Web Speech API. Silakan gunakan Chrome, Edge, atau Safari.');
+      return;
+    }
+
+    if (this.currentId === id && this.status === 'playing') {
+      this.pause();
+    } else if (this.currentId === id && this.status === 'paused') {
+      this.resume();
+    } else {
+      this.play(id, 0);
+    }
+  },
+
+  play(id, fromSeconds = 0) {
+    if (this.currentId && this.currentId !== id) {
+      this.stop(this.currentId);
+    }
+
+    this.currentId = id;
+    this.status = 'loading';
+    this.duration = this.getDuration(id);
+    this.currentTime = fromSeconds;
+    this.updateUI(id);
+
+    const fullText = this.textRegistry[id] || '';
+    const rate = this.rateRegistry[id] || 1.0;
+
+    let textToSpeak = fullText;
+    if (fromSeconds > 0 && this.duration > 0 && fullText.length > 0) {
+      const ratio = Math.min(0.95, fromSeconds / this.duration);
+      const roughChar = Math.floor(ratio * fullText.length);
+      const spaceIdx = fullText.indexOf(' ', roughChar);
+      const sliceIdx = spaceIdx !== -1 ? spaceIdx + 1 : roughChar;
+      textToSpeak = fullText.slice(sliceIdx);
+    }
+
+    if (!textToSpeak.trim()) {
+      textToSpeak = fullText;
+      this.currentTime = 0;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(textToSpeak);
+    utterance.lang = 'en-US';
+    utterance.rate = rate;
+
+    const voices = window.speechSynthesis.getVoices();
+    const enVoice = voices.find(v => v.lang && v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Microsoft') || v.name.includes('English')));
+    if (enVoice) utterance.voice = enVoice;
+
+    utterance.onstart = () => {
+      this.status = 'playing';
+      this.startTimer();
+      this.startKeepAlive();
+      this.updateUI(id);
+    };
+
+    utterance.onend = () => {
+      this.stop(id);
+    };
+
+    utterance.onerror = (e) => {
+      if (e && (e.error === 'canceled' || e.error === 'interrupted')) return;
+      this.stop(id);
+    };
+
+    this.activeUtterance = utterance;
+
+    window.speechSynthesis.cancel();
+    setTimeout(() => {
+      if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+      window.speechSynthesis.speak(utterance);
+    }, 40);
+  },
+
+  pause() {
+    if (this.status !== 'playing' || !this.currentId) return;
+    this.status = 'paused';
+    this.stopTimer();
+    this.stopKeepAlive();
+    window.speechSynthesis.pause();
+    this.updateUI(this.currentId);
+  },
+
+  resume() {
+    if (this.status !== 'paused' || !this.currentId) return;
+    this.status = 'playing';
+    
+    window.speechSynthesis.resume();
+    this.startTimer();
+    this.startKeepAlive();
+    this.updateUI(this.currentId);
+
+    setTimeout(() => {
+      if (!window.speechSynthesis.speaking && this.status === 'playing') {
+        this.play(this.currentId, this.currentTime);
+      }
+    }, 150);
+  },
+
+  stop(targetId = null) {
+    const id = targetId || this.currentId;
+    this.stopTimer();
+    this.stopKeepAlive();
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    this.status = 'idle';
+    this.currentTime = 0;
+    this.activeUtterance = null;
+    if (id) {
+      this.updateUI(id);
+    }
+    if (!targetId || targetId === this.currentId) {
+      this.currentId = null;
+    }
+  },
+
+  seek(id, event) {
+    const track = document.getElementById(`track-${id}`);
+    if (!track) return;
+    const rect = track.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const ratio = Math.max(0, Math.min(1, clickX / rect.width));
+    const dur = this.getDuration(id);
+    const newSeconds = Math.round(ratio * dur);
+
+    this.currentTime = newSeconds;
+    this.duration = dur;
+    this.updateUI(id);
+
+    if (this.status === 'playing' || this.status === 'paused') {
+      this.play(id, newSeconds);
+    }
+  },
+
+  startTimer() {
+    this.stopTimer();
+    this.timer = setInterval(() => {
+      if (this.status === 'playing') {
+        this.currentTime += 0.5;
+        if (this.currentTime >= this.duration) {
+          this.currentTime = this.duration;
+          this.stop(this.currentId);
+        } else {
+          this.updateUI(this.currentId);
+        }
+      }
+    }, 500);
+  },
+
+  stopTimer() {
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.timer = null;
+    }
+  },
+
+  startKeepAlive() {
+    this.stopKeepAlive();
+    this.keepAliveTimer = setInterval(() => {
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis.speaking) {
+        window.speechSynthesis.pause();
+        window.speechSynthesis.resume();
+      } else {
+        this.stopKeepAlive();
+      }
+    }, 9000);
+  },
+
+  stopKeepAlive() {
+    if (this.keepAliveTimer) {
+      clearInterval(this.keepAliveTimer);
+      this.keepAliveTimer = null;
+    }
+  }
+};
+
+window.UnifiedAudioEngine = UnifiedAudioEngine;
+
+function createAudioPlayerHTML(id, rawText) {
+  UnifiedAudioEngine.register(id, rawText);
+  const dur = UnifiedAudioEngine.getDuration(id);
+  const formattedDur = formatAudioTime(dur);
+  return `
+    <div class="audio-player-unit" id="audio-unit-${id}">
+      <div class="audio-controls-row">
+        <div class="audio-controls-left">
+          <button type="button" class="audio-btn audio-btn-play" id="btn-audio-${id}" onclick="UnifiedAudioEngine.toggle('${id}')">
+            ▶ Putar Audio
+          </button>
+          <button type="button" class="audio-btn audio-btn-stop" id="btn-stop-${id}" onclick="UnifiedAudioEngine.stop('${id}')">
+            ⏹ Stop
+          </button>
+          <div class="audio-speed-wrap">
+            <span>Kecepatan:</span>
+            <select class="audio-speed-select" id="speed-${id}" onchange="UnifiedAudioEngine.changeSpeed('${id}', this.value)">
+              <option value="0.85">0.85x (Pelan)</option>
+              <option value="1.0" selected>1.0x (Normal)</option>
+              <option value="1.15">1.15x (Cepat)</option>
+            </select>
+          </div>
+        </div>
+        <span class="audio-status-pill" id="status-${id}">● Siap Diputar</span>
+      </div>
+
+      <div class="audio-timeline-wrap">
+        <span class="audio-time-label" id="time-cur-${id}">00:00</span>
+        <div class="audio-timeline-track" id="track-${id}" onclick="UnifiedAudioEngine.seek('${id}', event)" title="Klik garis audio untuk melompat waktu">
+          <div class="audio-timeline-fill" id="track-fill-${id}" style="width: 0%;"></div>
+          <div class="audio-timeline-thumb" id="track-thumb-${id}" style="left: 0%;"></div>
+        </div>
+        <span class="audio-time-label" id="time-tot-${id}">${formattedDur}</span>
+      </div>
+    </div>
+  `;
+}
+
+// Global Aliases for Compatibility
+window.toggleListeningAudio = function(id) { UnifiedAudioEngine.toggle(id); };
+window.playPassageAudio = function(id) { UnifiedAudioEngine.toggle(id); };
+window.stopPassageAudio = function() { UnifiedAudioEngine.stop(); };
+window.changeAudioSpeed = function(id) {
+  const sel = document.getElementById(`speed-${id}`);
+  if (sel) UnifiedAudioEngine.changeSpeed(id, sel.value);
+};
+
+window.switchTab = function(panelId) {
+  const btn = document.querySelector(`.tab-btn[data-target="${panelId}"]`);
+  if (btn) {
+    btn.click();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 };
 
@@ -2080,33 +2164,15 @@ function renderListeningDrills() {
         </div>
 
         <div class="passage-card" style="background: var(--blue-soft); border-color: var(--blue);">
-          <h4>🎧 Audio Transcript &amp; Dialogue Scenario:</h4>
-
-          <!-- Audio Player Bar -->
-          <div class="audio-player-bar">
-            <div class="audio-controls-left">
-              <button type="button" class="audio-btn audio-btn-play" id="btn-audio-${drill.id}" onclick="toggleListeningAudio('${drill.id}', decodeURIComponent('${encodeURIComponent(drill.transcript)}'))">
-                ▶ Putar Audio
-              </button>
-              <button type="button" class="audio-btn audio-btn-stop" onclick="stopPassageAudio()">
-                ⏹ Stop
-              </button>
-              <div class="audio-speed-wrap">
-                <span>Kecepatan:</span>
-                <select class="audio-speed-select" id="speed-${drill.id}" onchange="changeAudioSpeed('${drill.id}')">
-                  <option value="0.85">0.85x (Pelan)</option>
-                  <option value="1.0" selected>1.0x (Normal)</option>
-                  <option value="1.15">1.15x (Cepat)</option>
-                </select>
-              </div>
-            </div>
-            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-              <span class="audio-status-pill" id="status-${drill.id}">● Siap Diputar</span>
-              <button type="button" class="blind-mode-toggle" id="btn-blind-${drill.id}" onclick="toggleBlindTranscript('${drill.id}')">
-                🙈 Uji Telinga (Sembunyikan)
-              </button>
-            </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+            <h4 style="margin:0;">🎧 Audio Transcript &amp; Dialogue Scenario:</h4>
+            <button type="button" class="blind-mode-toggle" id="btn-blind-${drill.id}" onclick="toggleBlindTranscript('${drill.id}')">
+              🙈 Uji Telinga (Sembunyikan)
+            </button>
           </div>
+
+          <!-- Universal Audio Player Bar with Garis Audio & Menitan -->
+          ${createAudioPlayerHTML(drill.id, drill.transcript)}
 
           <div class="blind-banner-hint" id="blind-hint-${drill.id}">
             <span>🎧 <strong>Mode Uji Telinga Aktif:</strong> Transkrip diburamkan agar Anda melatih kepekaan mendengar. Tekan tombol Putar Audio di atas, lalu jawab pertanyaan di bawah!</span>
@@ -2634,17 +2700,11 @@ function createExamQuestionHTML(q, section) {
   if (q.audioSim) {
     extraBox = `
       <div class="passage-card" style="background: var(--blue-soft); border-color: var(--blue); margin-bottom: 12px;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px; flex-wrap:wrap; gap:6px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px; flex-wrap:wrap; gap:6px;">
           <strong style="font-family: var(--mono); font-size: 12px; color: #1e556e;">🎧 AUDIO TRANSCRIPT SIMULATION:</strong>
-          <div style="display:flex; gap:6px; align-items:center;">
-            <button type="button" class="btn-flag-q" id="btn-audio-${q.id}" onclick="playPassageAudio('${q.id}', decodeURIComponent('${encodeURIComponent(q.audioSim)}'))">
-              ▶ Putar Audio
-            </button>
-            <button type="button" class="btn-flag-q" onclick="stopPassageAudio()">
-              ⏹ Stop
-            </button>
-          </div>
         </div>
+        <!-- Universal Audio Player Bar with Garis Audio & Menitan -->
+        ${createAudioPlayerHTML(q.id, q.audioSim)}
         <pre style="white-space: pre-wrap; font-family: var(--font); margin: 0; font-size: 13.5px; line-height: 1.5;">${escapeHtml(q.audioSim)}</pre>
       </div>
     `;
@@ -2687,7 +2747,7 @@ function createExamQuestionHTML(q, section) {
         ${optionsHTML}
       </div>
       <div class="explanation-card exam-expl" id="expl-${q.id}">
-        <strong>💡 Pembahasan Dosen (Underlined Phrase):</strong>
+        <strong>💡 Pembahasan Dosen (Underlined Phrase & Keyword):</strong>
         <div style="margin-top: 4px; line-height: 1.5;">${q.expl}</div>
       </div>
     </div>
@@ -2695,27 +2755,54 @@ function createExamQuestionHTML(q, section) {
 }
 
 window.selectExamAnswer = function(questionId, selectedIdx, section) {
-  if (AppState.examSubmitted) return;
+  let question = null;
+  if (UTS_EXAM_DATA[section]) {
+    question = UTS_EXAM_DATA[section].find(item => item.id === questionId);
+  } else {
+    for (const sec of ['listening', 'grammar', 'reading']) {
+      const found = UTS_EXAM_DATA[sec].find(item => item.id === questionId);
+      if (found) { question = found; section = sec; break; }
+    }
+  }
+
+  const isCorrect = question ? selectedIdx === question.answer : false;
 
   AppState.examAnswers[questionId] = {
     selected: selectedIdx,
-    section: section
+    section: section,
+    isCorrect: isCorrect
   };
 
   const box = document.getElementById(`exam-q-${questionId}`);
   if (box) {
     const buttons = box.querySelectorAll('.exam-opt-btn');
     buttons.forEach((b, idx) => {
-      if (idx === selectedIdx) {
-        b.style.borderColor = 'var(--ink)';
-        b.style.background = 'var(--mustard-soft)';
-        b.style.fontWeight = '700';
+      b.classList.remove('selected', 'correct', 'wrong');
+      if (question) {
+        if (idx === question.answer) {
+          b.classList.add('correct');
+        } else if (idx === selectedIdx && !isCorrect) {
+          b.classList.add('wrong');
+        }
       } else {
-        b.style.borderColor = 'var(--ink)';
-        b.style.background = 'var(--paper)';
-        b.style.fontWeight = 'normal';
+        if (idx === selectedIdx) b.classList.add('selected');
       }
     });
+
+    const expl = document.getElementById(`expl-${questionId}`);
+    if (expl) {
+      const statusBanner = isCorrect
+        ? '<div class="expl-status-banner banner-success" style="margin-bottom:8px;">🎉 <strong>Jawaban Anda Benar!</strong> Sesuai kunci jawaban dan transkrip resmi dosen.</div>'
+        : '<div class="expl-status-banner banner-danger" style="margin-bottom:8px;">❌ <strong>Jawaban Belum Tepat.</strong> Perhatikan bukti kalimat dan rujukan dosen di bawah:</div>';
+      
+      const rawExpl = question ? question.expl : '';
+      expl.innerHTML = `
+        ${statusBanner}
+        <strong>💡 Pembahasan Dosen (Underlined Phrase & Keyword):</strong>
+        <div style="margin-top: 4px; line-height: 1.5;">${rawExpl}</div>
+      `;
+      expl.classList.add('show');
+    }
   }
 
   updateLJKSummary();
@@ -2729,7 +2816,7 @@ const ALL_EXAM_MC_IDS = [
 ];
 window.ALL_EXAM_MC_IDS = ALL_EXAM_MC_IDS;
 
-window.renderExamLJKGrid = function() {
+function renderExamLJKGrid() {
   const container = document.getElementById('ljk-bubbles-grid');
   if (!container) return;
 
@@ -2778,7 +2865,8 @@ window.renderExamLJKGrid = function() {
   if (badge) {
     badge.textContent = `LJK Terisi: ${answeredCount} / 17 Soal MC`;
   }
-};
+}
+window.renderExamLJKGrid = renderExamLJKGrid;
 
 window.toggleExamFlag = function(qId) {
   if (AppState.examSubmitted) return;
