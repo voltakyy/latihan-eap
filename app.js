@@ -1791,12 +1791,40 @@ function initAccordions() {
 // ================= Web Speech Listening Audio Engine =================
 let activeSpeechUtterance = null;
 let currentPlayingId = null;
+let speechKeepAliveTimer = null;
+
+// Pre-warm Web Speech voices in background
+if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = () => {
+    window.speechSynthesis.getVoices();
+  };
+  window.speechSynthesis.getVoices();
+}
+
+function startSpeechKeepAlive() {
+  stopSpeechKeepAlive();
+  speechKeepAliveTimer = setInterval(() => {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis.speaking) {
+      window.speechSynthesis.pause();
+      window.speechSynthesis.resume();
+    } else {
+      stopSpeechKeepAlive();
+    }
+  }, 9000);
+}
+
+function stopSpeechKeepAlive() {
+  if (speechKeepAliveTimer) {
+    clearInterval(speechKeepAliveTimer);
+    speechKeepAliveTimer = null;
+  }
+}
 
 function prepareSpeechText(raw) {
   if (!raw) return '';
   return raw
     .replace(/\[.*?\]/g, '') // remove bracket headers
-    .replace(/(Host|Nathan|Miley|Presenter|Speaker 1|Speaker 2|Professor|Advisor|Dimas|Aisha|Budi|Proctor):/gi, '$1 says, ')
+    .replace(/(Host|Nathan|Miley|Presenter|Speaker 1|Speaker 2|Professor|Advisor|Dimas|Aisha|Budi|Proctor|Officer|Roger|Enquirer|Coordinator|Secretary|Participant):/gi, '$1 says, ')
     .replace(/"/g, '')
     .trim();
 }
@@ -1819,6 +1847,16 @@ window.toggleListeningAudio = function(drillId, rawTranscript) {
 
   window.stopPassageAudio();
 
+  // Instant visual feedback: Loading Spinner
+  if (btn) {
+    btn.innerHTML = '<span class="audio-spinner"></span> Menyiapkan Audio...';
+    btn.className = 'audio-btn audio-btn-play loading';
+  }
+  if (statusEl) {
+    statusEl.innerHTML = '<span class="audio-spinner"></span> Memuat...';
+    statusEl.className = 'audio-status-pill loading';
+  }
+
   const textToSpeak = prepareSpeechText(rawTranscript);
   const rate = speedSelect ? parseFloat(speedSelect.value) || 1.0 : 1.0;
 
@@ -1827,11 +1865,12 @@ window.toggleListeningAudio = function(drillId, rawTranscript) {
   utterance.rate = rate;
 
   const voices = window.speechSynthesis.getVoices();
-  const enVoice = voices.find(v => v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Microsoft') || v.name.includes('English')));
+  const enVoice = voices.find(v => v.lang && v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Microsoft') || v.name.includes('English')));
   if (enVoice) utterance.voice = enVoice;
 
   utterance.onstart = function() {
     currentPlayingId = drillId;
+    startSpeechKeepAlive();
     if (btn) {
       btn.innerHTML = '⏹ Berhenti';
       btn.className = 'audio-btn audio-btn-play playing';
@@ -1843,10 +1882,15 @@ window.toggleListeningAudio = function(drillId, rawTranscript) {
   };
 
   utterance.onend = utterance.onerror = function() {
+    stopSpeechKeepAlive();
     resetAudioUI(drillId);
   };
 
   activeSpeechUtterance = utterance;
+
+  // Unpause in case Chromium speech was suspended
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.resume();
   window.speechSynthesis.speak(utterance);
 };
 
@@ -1857,31 +1901,52 @@ window.playPassageAudio = function(qId, rawText) {
   }
 
   window.stopPassageAudio();
+
+  const btn = document.getElementById(`btn-audio-${qId}`);
+  if (btn) {
+    btn.innerHTML = '<span class="audio-spinner"></span> Memuat...';
+    btn.classList.add('loading');
+  }
+
   const text = prepareSpeechText(rawText);
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'en-US';
   utterance.rate = 1.0;
 
-  const btn = document.getElementById(`btn-audio-${qId}`);
-  if (btn) {
-    btn.innerHTML = '⏹ Stop Audio';
-    btn.classList.add('is-flagged');
-  }
+  const voices = window.speechSynthesis.getVoices();
+  const enVoice = voices.find(v => v.lang && v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Microsoft') || v.name.includes('English')));
+  if (enVoice) utterance.voice = enVoice;
+
+  utterance.onstart = function() {
+    currentPlayingId = qId;
+    startSpeechKeepAlive();
+    if (btn) {
+      btn.innerHTML = '⏹ Stop Audio';
+      btn.classList.remove('loading');
+      btn.classList.add('is-flagged');
+    }
+  };
 
   utterance.onend = utterance.onerror = function() {
+    stopSpeechKeepAlive();
     if (btn) {
       btn.innerHTML = '▶ Putar Audio';
       btn.classList.remove('is-flagged');
+      btn.classList.remove('loading');
     }
     currentPlayingId = null;
   };
 
   currentPlayingId = qId;
   activeSpeechUtterance = utterance;
+
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.resume();
   window.speechSynthesis.speak(utterance);
 };
 
 window.stopPassageAudio = function() {
+  stopSpeechKeepAlive();
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
   }
@@ -1891,6 +1956,7 @@ window.stopPassageAudio = function() {
     if (qBtn) {
       qBtn.innerHTML = '▶ Putar Audio';
       qBtn.classList.remove('is-flagged');
+      qBtn.classList.remove('loading');
     }
   }
   currentPlayingId = null;
@@ -1903,6 +1969,7 @@ function resetAudioUI(drillId) {
   if (btn) {
     btn.innerHTML = '▶ Putar Audio';
     btn.className = 'audio-btn audio-btn-play';
+    btn.classList.remove('loading');
   }
   if (statusEl) {
     statusEl.textContent = '● Siap Diputar';
