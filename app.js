@@ -17,9 +17,9 @@
 const LISTENING_DRILLS = [
   {
     "id": "lis-nathan",
-    "title": "Exercise 1: Radio Interview \u2014 Nathan's School (Brooklyn Free School)",
+    "title": "Exercise 1: Radio Interview  -  Nathan's School (Brooklyn Free School)",
     "source": "Latihan Dosen: Meeting 2 (Set 1 - Nathan's School)",
-    "transcript": "[RADIO INTERVIEW TRANSCRIPT \u2014 EDUCATION TODAY]\nHost: \"Welcome back to Education Today. Today we're visiting Brooklyn Free School in New York to speak with Nathan, a 16-year-old high school student. Nathan, tell us about how your school works.\"\nNathan: \"Hi! Well, Brooklyn Free School is really unique. There are no tests, no homework, and no mandatory grades. In my section of the school, students are aged 12 to 18, and there are about 60 students in total. We choose what we want to study every day rather than following standard school subjects.\"\nHost: \"Do you have regular classes with kids your own age?\"\nNathan: \"Actually, I rarely sit next to students who are only my age. We mix together. For instance, the boy who helps me with advanced mathematics is only 13 years old, but he's a genius at calculus! Our daily lessons run from 9:00 a.m. to 3:00 p.m. And while some think it's completely free, standard tuition actually costs about $12,000 a year, though they offer generous financial aid.\"\nHost: \"Do you enjoy coming to school?\"\nNathan: \"I absolutely love it. It's an inspiring and liberating place to learn.\"",
+    "transcript": "[RADIO INTERVIEW TRANSCRIPT : BROOKLYN FREE SCHOOL]\nHost: \"I am with Nathan King. He's a student at the Brooklyn Free School. Hi Nathan, and welcome to the program.\"\nNathan: \"Hi.\"\nHost: \"So Nathan, how old are you, and which grade are you in?\"\nNathan: \"I'm 15. In a normal school that's 10th grade, but at my school we don't have grades.\"\nHost: \"Can you tell us a bit about the school? How big is it?\"\nNathan: \"Well, the school has got two parts: one for students aged 4 to 11, and the other for students between 12 and 18. My part of the school has about 60 students.\"\nHost: \"And does each class have a lot of students?\"\nNathan: \"No, the classes are very small, usually about three or four students, and they are mixed age, so I sometimes sit next to a student who is maybe 12, or sometimes I sit next to someone who is 18.\"\nHost: \"Really? Does that work well?\"\nNathan: \"Yes, for example there's a boy of 13 at the school who's good at maths, I mean really good at maths, much better than me, and we're in the same math class and he helps me.\"\nHost: \"What other subjects do you study?\"\nNathan: \"We study the usual subjects: maths, English, science, geography, music, and so on. But we don't have to study anything, we can study what we like. We have two meetings every day, one in the morning and one after lunch. That's when we decide what classes we want to attend.\"\nHost: \"What time does school start and finish?\"\nNathan: \"We start at 9:00 in the morning and finish at 3:00 in the afternoon.\"\nHost: \"Does it cost a lot of money to study at the school?\"\nNathan: \"Yes, it's $20,000 a year, but not everyone has to pay. If you come from a poor family it costs less.\"\nHost: \"Do you think it's a good school?\"\nNathan: \"Yes, it's great! I love it. I learn what I want to learn and I learn when I want to learn, not when a teacher tells me.\"\nHost: \"Thank you, Nathan.",
     "questions": [
       {
         "id": "ln-0a",
@@ -27,10 +27,10 @@ const LISTENING_DRILLS = [
         "options": [
           "Classes at the school are very small.",
           "They study the usual school subjects.",
-          "Nathan loves and enjoys coming to school."
+          "Nathan doesn't enjoy school."
         ],
-        "answer": 1,
-        "expl": "Kunci: B (They study the usual school subjects). Transkrip: <u>'There are no tests, no homework... We choose what we want to study every day rather than following standard school subjects.'</u> Siswa di Brooklyn Free School tidak mempelajari mata pelajaran konvensional/standar."
+        "answer": 2,
+        "expl": "Kunci: C (Nathan doesn't enjoy school). Transkrip: <u>'Do you think it\'s a good school? Yes, it\'s great! I love it.'</u> Pernyataan bahwa Nathan tidak menikmati sekolah adalah salah (NOT true)."
       },
       {
         "id": "ln-0b",
@@ -62,8 +62,8 @@ const LISTENING_DRILLS = [
           "16",
           "17"
         ],
-        "answer": 1,
-        "expl": "Kunci: B (16). Transkrip: <u>'...to speak with Nathan, a 16-year-old high school student.'</u>"
+        "answer": 0,
+        "expl": "Kunci: A (15). Transkrip: <u>'So Nathan, how old are you, and which grade are you in? I\'m 15.'</u>"
       },
       {
         "id": "ln-2",
@@ -128,16 +128,16 @@ const LISTENING_DRILLS = [
           "$12,000",
           "$20,000"
         ],
-        "answer": 1,
-        "expl": "Kunci: B ($12,000). Transkrip: <u>'...standard tuition actually costs about $12,000 a year...'</u>"
+        "answer": 2,
+        "expl": "Kunci: C ($20,000). Transkrip: <u>'Does it cost a lot of money to study at the school? Yes, it\'s $20,000 a year, but not everyone has to pay.'</u>"
       }
     ]
   },
   {
     "id": "lis-miley",
-    "title": "Exercise 2: Celebrity Profile \u2014 Miley Cyrus Short Biography",
+    "title": "Exercise 2: Celebrity Profile  -  Miley Cyrus Short Biography",
     "source": "Latihan Dosen: Meeting 2 (Set 2 - Miley Cyrus)",
-    "transcript": "[BIOGRAPHY AUDIO TRANSCRIPT \u2014 MILEY CYRUS]\nNarrator: \"Destined for the spotlight, Miley Cyrus was born to be a star. She was born on November 23rd, 1992 in Franklin, Tennessee. Miley first became famous in a TV show when Disney cast her as the lead character in the hit television series Hannah Montana. Two years later, Cyrus became even more famous with her music, releasing chart-topping records under her own name. Her 3D concert movie obtained more than 55 million dollars at the box office worldwide. Remarkably, by the tender age of 16, Miley Cyrus had already earned two #1 albums on the Billboard charts. Among her massive hits, 'Party in the U.S.A.' became her best-selling single in the USA. Critics and fans admire her daring artistic choices; the presenter notes he particularly likes Miley Cyrus because she fearlessly takes risks in her creative career. In 2011, Cyrus was officially recognized in Hollywood as the second richest person among teenage celebrities. Later, in 2012, Miley demonstrated her versatile comedic talent when she participated as a special guest star in the popular sitcom 'Two and a Half Men'.\"",
+    "transcript": "[BIOGRAPHY AUDIO TRANSCRIPT  -  MILEY CYRUS]\nNarrator: \"Destined for the spotlight, Miley Cyrus was born to be a star. She was born on November 23rd, 1992 in Franklin, Tennessee. Miley first became famous in a TV show when Disney cast her as the lead character in the hit television series Hannah Montana. Two years later, Cyrus became even more famous with her music, releasing chart-topping records under her own name. Her 3D concert movie obtained more than 55 million dollars at the box office worldwide. Remarkably, by the tender age of 16, Miley Cyrus had already earned two #1 albums on the Billboard charts. Among her massive hits, 'Party in the U.S.A.' became her best-selling single in the USA. Critics and fans admire her daring artistic choices; the presenter notes he particularly likes Miley Cyrus because she fearlessly takes risks in her creative career. In 2011, Cyrus was officially recognized in Hollywood as the second richest person among teenage celebrities. Later, in 2012, Miley demonstrated her versatile comedic talent when she participated as a special guest star in the popular sitcom 'Two and a Half Men'.\"",
     "questions": [
       {
         "id": "lm-1",
@@ -253,9 +253,9 @@ const LISTENING_DRILLS = [
   },
   {
     "id": "lis-council",
-    "title": "Exercise 3: Official Enquiry \u2014 Roger Brown Youth Council Form",
+    "title": "Exercise 3: Official Enquiry  -  Roger Brown Youth Council Form",
     "source": "Dokumen Dosen: Meeting 2 (Set 3 - Youth Council | Cambridge IELTS 11)",
-    "transcript": "[OFFICIAL CONSULTATION TRANSCRIPT \u2014 YOUTH COUNCIL ENQUIRY]\nOfficer: \"Good morning. Youth Council Office. How can I help you?\"\nRoger: \"Hello. My name is Roger Brown, and I'd like to enquire about joining the District Youth Council.\"\nOfficer: \"Certainly, Roger. Let me take down your particulars. You are 18 years old, correct?\"\nRoger: \"Yes, I turned 18 last month. During the week, I am currently staying in a hostel near the city college, though my family home is in Lincolnshire.\"\nOfficer: \"Right, hostel during weekdays. And what is your postal address?\"\nRoger: \"It is 17 Buckworth Street, Stamford, Lincolnshire. That is spelled B-U-C-K-W-O-R-T-H.\"\nOfficer: \"Thank you. And the postcode?\"\nRoger: \"PE9 7QT.\"\nOfficer: \"Got it. What is your current occupation?\"\nRoger: \"Well, I am a full-time university student, but I also work part-time as a waiter at a local bistro on weekends.\"\nOfficer: \"Excellent. And what degree are you taking?\"\nRoger: \"I am studying politics as my major subject, and history as my minor.\"\nOfficer: \"Splendid background for council work. Do you have any personal hobbies or interests?\"\nRoger: \"Yes, I do a lot of cycling around the countryside, and in the evenings I am very interested in the cinema.\"\nOfficer: \"Now, regarding council committees, is there a particular focus you'd prefer?\"\nRoger: \"I am very keen on working with young people who are disabled, helping them access sports facilities.\"\nOfficer: \"Wonderful. Our Elections Officer will need to interview you. Could you come next Monday at 4:30 pm?\"\nRoger: \"Yes, next Monday at 4:30 pm suits me perfectly.\"\nOfficer: \"And lastly, may I have your mobile number?\"\nRoger: \"Certainly, it is 07788 136711.\"\nOfficer: \"Brilliant. See you Monday, Roger!\"",
+    "transcript": "[OFFICIAL CONSULTATION TRANSCRIPT : YOUTH COUNCIL ENQUIRY]\n[Cambridge IELTS 11 Test 2 Section 1]\n\nOfficer: \"Good morning. Youth Council Office. How can I help you?\"\nRoger: \"Hello. I've come along to enquire about joining the District Youth Council. I was told to give you a call.\"\nOfficer: \"Certainly. Let me take down a few details first. Can I have your full name?\"\nRoger: \"Yes, it's Roger Brown.\"\nOfficer: \"Thank you. And your age?\"\nRoger: \"I've just turned 18.\"\nOfficer: \"And where do you live, Roger?\"\nRoger: \"Well, that's a bit complicated at the moment. I'm looking for a flat to rent here, so I'm in a hostel from Monday to Friday. I go back to my parents' place at the weekend.\"\nOfficer: \"Okay, so where is the best place to send you some information about the council?\"\nRoger: \"To my parents' address, please. That's 17 Buckworth Street, Stamford, Lincolnshire.\"\nOfficer: \"That's Buckworth: B-U-C-K-W-O-R-T-H?\"\nRoger: \"That's right.\"\nOfficer: \"And the postcode?\"\nRoger: \"PE9 7QT.\"\nOfficer: \"Thank you. And are you working here or are you a student?\"\nRoger: \"I started studying at the university a couple of weeks ago, and I've got a part-time job for a few hours a week. I'm working as a waiter in one of the big hotels.\"\nOfficer: \"Great. And what degree are you taking?\"\nRoger: \"My major subject is politics. And I chose history as my minor subject.\"\nOfficer: \"Do you have time for any other interests or hobbies?\"\nRoger: \"Well, I spend quite a lot of time cycling around town and out in the country. For relaxation, I'm also keen on the cinema.\"\nOfficer: \"Is there any particular aspect of council work you're interested in?\"\nRoger: \"Well, my sister is blind, so I'm particularly interested in working with disabled young people to try and improve the quality of their facilities.\"\nOfficer: \"That's wonderful. You should talk to Geoffrey, our Elections Officer. Could you come to the council office next Monday at 4:30 pm?\"\nRoger: \"Yes, 4:30 pm next Monday suits me fine.\"\nOfficer: \"And may I have your mobile number?\"\nRoger: \"Yes, it is 07788 136711.\"\nOfficer: \"Thank you, Roger. We look forward to seeing you on Monday.\" ",
     "questions": [
       {
         "id": "lc-1",
@@ -381,9 +381,9 @@ const LISTENING_DRILLS = [
   },
   {
     "id": "lis-festival",
-    "title": "Exercise 4: Community Festival \u2014 Event, Cost, Venue & Plays",
+    "title": "Exercise 4: Community Festival  -  Event, Cost, Venue & Plays",
     "source": "Dokumen Dosen: Meeting 2 (Set 4 - Festival | Cambridge IELTS 11 Test 4)",
-    "transcript": "[FESTIVAL INFORMATION TRANSCRIPT \u2014 STRETTON COMMUNITY FESTIVAL]\nEnquirer: \"Good morning, I'm calling to ask about events at the Stretton Community Festival next week.\"\nCoordinator: \"Of course! We have a marvelous program lined up. On Friday night, our opening event is the Jazz Band concert. Tickets are available for \u00a315. The venue is the Secondary school auditorium, and we're fortunate to have Carolyn Hart appearing as guest soloist; she plays the flute delightfully.\"\nEnquirer: \"Lovely! And what about Saturday daytime?\"\nCoordinator: \"Saturday features the famous Duck races along the river. It costs just \u00a31 per duck to participate. The race will start behind the Infirmary. The first prize is a family pass of tickets for the fireworks display held at the end of the festival. You can purchase ducks in advance at the Town Hall reception desk.\"\nEnquirer: \"Great fun! And is there a Flower Show this year?\"\nCoordinator: \"Yes, admission to the Flower Show is completely free! It will take place in Bythwaite Hall on Saturday afternoon. The contest prizes will be presented at 5:00 p.m. by a well-known actor who resides locally.\"\nEnquirer: \"My children love theatre. Are there any drama plays scheduled?\"\nCoordinator: \"Indeed! We have three distinct plays running at the outdoor theatre. The first play, 'The Mystery of Muldoon', deals with complex psychological themes, so it is intended mainly for adults. The second production, 'Fire and Flood', is a dramatic historical recreation suitable for people of all ages. Finally, 'Silly Sailor' is an upbeat slapstick comedy featuring puppetry, designed mainly for children.\"\nEnquirer: \"That sounds wonderful! Thank you so much.\"",
+    "transcript": "[FESTIVAL INFORMATION TRANSCRIPT  -  STRETTON COMMUNITY FESTIVAL]\nEnquirer: \"Good morning, I'm calling to ask about events at the Stretton Community Festival next week.\"\nCoordinator: \"Of course! We have a marvelous program lined up. On Friday night, our opening event is the Jazz Band concert. Tickets are available for \u00a315. The venue is the Secondary school auditorium, and we're fortunate to have Carolyn Hart appearing as guest soloist; she plays the flute delightfully.\"\nEnquirer: \"Lovely! And what about Saturday daytime?\"\nCoordinator: \"Saturday features the famous Duck races along the river. It costs just \u00a31 per duck to participate. The race will start behind the Infirmary. The first prize is a family pass of tickets for the fireworks display held at the end of the festival. You can purchase ducks in advance at the Town Hall reception desk.\"\nEnquirer: \"Great fun! And is there a Flower Show this year?\"\nCoordinator: \"Yes, admission to the Flower Show is completely free! It will take place in Bythwaite Hall on Saturday afternoon. The contest prizes will be presented at 5:00 p.m. by a well-known actor who resides locally.\"\nEnquirer: \"My children love theatre. Are there any drama plays scheduled?\"\nCoordinator: \"Indeed! We have three distinct plays running at the outdoor theatre. The first play, 'The Mystery of Muldoon', deals with complex psychological themes, so it is intended mainly for adults. The second production, 'Fire and Flood', is a dramatic historical recreation suitable for people of all ages. Finally, 'Silly Sailor' is an upbeat slapstick comedy featuring puppetry, designed mainly for children.\"\nEnquirer: \"That sounds wonderful! Thank you so much.\"",
     "questions": [
       {
         "id": "lf-1",
@@ -506,9 +506,9 @@ const LISTENING_DRILLS = [
   },
   {
     "id": "lis-conference",
-    "title": "Exercise 5: Informatics Seminar \u2014 Future Directions in Computing Conference",
+    "title": "Exercise 5: Informatics Seminar  -  Future Directions in Computing Conference",
     "source": "Dokumen Dosen: Meeting 2 (Set 5 - Conference | Cambridge IELTS 6 Test 4)",
-    "transcript": "[CONFERENCE REGISTRATION TRANSCRIPT \u2014 FUTURE DIRECTIONS IN COMPUTING]\nSecretary: \"Good morning. Computing Conference Enquiries. How can I direct your call?\"\nParticipant: \"Hello. I'm calling about the upcoming 'Future Directions in Computing' conference. Could you give me the key attendance details?\"\nSecretary: \"Certainly! The full three-day registration cost is \u00a3360 per attendee. You can make payment in advance by 10th October, or choose to pay on arrival at the registration desk.\"\nParticipant: \"And what accommodation options do you offer for delegates?\"\nSecretary: \"We offer two types. If you stay on-site at the Conference Centre, rooms cost \u00a365 per night, which is right next to the conference halls. Alternatively, there is a Guest House located nearby costing \u00a345 per night. It is approximately a 10 minutes walk from the Conference Centre.\"\nParticipant: \"Ten minutes walk sounds very convenient. What documents will you be sending me?\"\nSecretary: \"Once you reserve, we will send you the complete conference programme and an official application form.\"\nParticipant: \"Excellent. Where exactly is the venue situated in town?\"\nSecretary: \"The Conference Centre is located on South Park Road, right next to the City Library.\"\nParticipant: \"How should I travel there from the central railway station?\"\nSecretary: \"A taxi costs approximately \u00a35 from the station, or you can take bus number 21A, which stops right outside our front gates.\"\nParticipant: \"Superb. Thank you very much for your assistance!\"",
+    "transcript": "[CONFERENCE REGISTRATION TRANSCRIPT  -  FUTURE DIRECTIONS IN COMPUTING]\nSecretary: \"Good morning. Computing Conference Enquiries. How can I direct your call?\"\nParticipant: \"Hello. I'm calling about the upcoming 'Future Directions in Computing' conference. Could you give me the key attendance details?\"\nSecretary: \"Certainly! The full three-day registration cost is \u00a3360 per attendee. You can make payment in advance by 10th October, or choose to pay on arrival at the registration desk.\"\nParticipant: \"And what accommodation options do you offer for delegates?\"\nSecretary: \"We offer two types. If you stay on-site at the Conference Centre, rooms cost \u00a365 per night, which is right next to the conference halls. Alternatively, there is a Guest House located nearby costing \u00a345 per night. It is approximately a 10 minutes walk from the Conference Centre.\"\nParticipant: \"Ten minutes walk sounds very convenient. What documents will you be sending me?\"\nSecretary: \"Once you reserve, we will send you the complete conference programme and an official application form.\"\nParticipant: \"Excellent. Where exactly is the venue situated in town?\"\nSecretary: \"The Conference Centre is located on South Park Road, right next to the City Library.\"\nParticipant: \"How should I travel there from the central railway station?\"\nSecretary: \"A taxi costs approximately \u00a35 from the station, or you can take bus number 21A, which stops right outside our front gates.\"\nParticipant: \"Superb. Thank you very much for your assistance!\"",
     "questions": [
       {
         "id": "lk-1",
@@ -1812,10 +1812,10 @@ function formatAudioTime(totalSeconds) {
 
 const AUDIO_FILE_MAP = {
   // Listening Arena (100% Berkas MP3 Otentik Dosen & Google Drive)
-  'lis-nathan': { src: 'audio/nathans_school.mp3', duration: 84, label: 'MP3 Latihan Dosen' },
-  'lis-miley': { src: 'audio/miley_cyrus_bio.mp3', duration: 156, label: 'MP3 Google Drive Resmi' },
-  'lis-council': { src: 'audio/youth_council.mp3', duration: 148, label: 'MP3 Cambridge IELTS 11' },
-  'lis-festival': { src: 'audio/community_festival.mp3', duration: 115, label: 'MP3 Cambridge IELTS 11' },
+  'lis-nathan': { src: 'audio/nathans_school.mp3', duration: 159, label: 'MP3 Solutions Elementary (Dosen)' },
+  'lis-miley': { src: 'audio/miley_cyrus_bio.mp3', duration: 157, label: 'MP3 Google Drive Resmi' },
+  'lis-council': { src: 'audio/youth_council.mp3', duration: 430, label: 'MP3 Cambridge IELTS 11 (Dosen)' },
+  'lis-festival': { src: 'audio/community_festival.mp3', duration: 421, label: 'MP3 Cambridge IELTS 11 (Dosen)' },
   'lis-conference': { src: 'audio/future_directions_computing.mp3', duration: 338, label: 'MP3 Google Drive Resmi' },
 
   // Simulasi UTS (CLO 1 Listening Comprehension)
